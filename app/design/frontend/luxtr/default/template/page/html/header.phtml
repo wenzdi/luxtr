@@ -37,6 +37,19 @@
         <?php echo $this->getChildHtml('currency_switcher') ?>
 
         <p class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getAdditionalHtml() ?></p>
+        <ul class="sharing-links">
+            <li>
+                <a href="http://www.facebook.com/" target="_blank" title="<?php echo $this->__('Share on Facebook') ?>" class="link-facebook">
+                    <?php echo $this->__('Share Facebook') ?>
+                </a>
+            </li>
+            <li>
+                <a href="http://twitter.com" target="_blank" title="<?php echo $this->__('Share on Twitter') ?>" class="link-twitter"><?php echo $this->__('Share on Twitter') ?></a>
+            </li>
+            <li>
+                <a href="https://instagram.com/" target="_blank" title="<?php echo $this->__('Share on Instagram') ?>" class="link-instagram"><?php echo $this->__('Share on Instagram') ?></a>
+            </li>
+        </ul>
     </div>
 </div>
 
@@ -86,9 +99,9 @@
 
         <!-- Search -->
 
-        <div id="header-search" class="skip-content">
-            <?php echo $this->getChildHtml('topSearch') ?>
-        </div>
+<!--        <div id="header-search" class="skip-content">-->
+<!--            --><?php //echo $this->getChildHtml('topSearch') ?>
+<!--        </div>-->
 
         <!-- Account -->
 
@@ -109,6 +122,8 @@
         </div> -->
     </div>
 </header>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53b91d7f2922e33b" async="async"></script>
 
 
 <?php echo $this->getChildHtml('topContainer'); ?>

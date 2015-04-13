@@ -230,7 +230,12 @@ Product view
                     <action method="addToParentGroup"><group>detailed_info</group></action>
                     <action method="setTitle" translate="value"><value>Additional Information</value></action>
                 </block>
-                <block type="catalog/product_list_related" name="catalog.product.related" as="related_products" template="catalog/product/list/related.phtml" />
+                <block type="catalog/product_view_description" name="product.description2" as="description2" template="catalog/product/view/tab.phtml">
+                    <action method="addToParentGroup"><group>detailed_info</group></action>
+                    <action method="setTitle" translate="value"><value>you may also like</value></action>
+                    <block type="catalog/product_list_related" name="catalog.product.related" as="related_products" template="catalog/product/list/related.phtml" />
+                </block>
+
 
                 <!--<block type="catalog/product_view" name="product.info.addto" as="addto" template="catalog/product/view/addto.phtml"/>-->
                 <block type="catalog/product_view" name="product.info.sharing" as="sharing" template="catalog/product/view/sharing.phtml"/>

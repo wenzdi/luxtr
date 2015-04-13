@@ -1,3 +1,14 @@
+body,
+button,
+input,
+select,
+table,
+textarea {
+    font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
+    color: #636363;
+    font-size: 14px;
+    line-height: 1.5;
+}
 
 @font-face {
     font-family: 'Myriad Pro Regular';
@@ -19,6 +30,12 @@
     font-style: normal;
     font-weight: normal;
     src: local('Myriad Pro Light'), url('../fonts/MyriadPro-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Myriad Pro Light Semi Ext';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Light Semi Ext'), url('../fonts/MyriadPro-LightSemiExt.woff') format('woff');
 }
 
 
@@ -155,4 +172,109 @@
 .button.button-secondary:hover {
     background: #e74c3c;
     cursor: pointer;
+}
+
+
+.header-language-container .sharing-links {
+    float: right;
+}
+
+.header-language-container .sharing-links:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.header-language-container .sharing-links li {
+    float: left;
+}
+.header-language-container .sharing-links a {
+    text-indent: -9999px;
+    display: block;
+    width: 30px;
+    height: 26px;
+}
+.header-language-container .sharing-links a:hover {
+    opacity: 0.8;
+}
+.header-language-background{
+    background-color: #fbfbfb;
+    padding: 0px;
+    padding-top: 3px;
+
+}
+.header-language-container .sharing-links a.link-facebook {
+    background-image: url(../images/fb.png);
+    background-repeat: no-repeat;
+}
+.header-language-container .sharing-links a.link-twitter {
+    background-image: url(../images/tw.png);
+    background-repeat: no-repeat;
+}
+.header-language-container .sharing-links a.link-instagram {
+    background-image: url(../images/in.png);
+    background-repeat: no-repeat;
+}
+
+.header-language-container .sharing-links a:hover {
+    opacity: 0.8;
+
+}
+.header-language-container, .page-header{
+    background-color: #fbfbfb;
+
+}
+.logo{
+    min-height: 38px;
+    opacity: 0.7;
+    padding: 0px;
+}
+.logo:hover{
+    opacity: 0.7;
+}
+.page-header{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    max-width: 100%;
+}
+.page-header-container{
+    max-width: 1260px;
+    margin: 0 auto;
+}
+.skip-links{
+    padding-bottom: 14px;
+}
+
+.tab-content {
+    overflow: auto;
+}
+
+.product-view .block-related{
+    width: 100%;
+    clear: none;
+    float: left;
+}
+.mini-products-list li{
+    clear: none;
+    float: left;
+    width:30%;
+}
+
+.product-view .block-related .product-details {
+    clear: both;
+    margin-left: 0px;
+}
+
+h2.product-name, h3.product-name, h4.product-name, h5.product-name, p.product-name {
+    font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #4a4b46;
+}
+p.product-desc {
+    font-family: "Myriad Pro Light Semi Ext";
+    font-size: 18px;
+    color: #4a4b46;
+    word-wrap: break-word;
 }

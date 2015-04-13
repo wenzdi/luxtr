@@ -101,18 +101,22 @@
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
+<!--                        --><?php //echo $this->getChildHtml('sharing') ?>
+                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        <div class="addthis_native_toolbox"></div>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
                         <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
+<!--                        --><?php //echo $this->getChildHtml('sharing') ?>
+                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        <div class="addthis_native_toolbox"></div>
                     </div>
                 <?php endif; ?>
             </div>
 
-            <?php echo $this->getChildHtml('related_products') ?>
+
 
             <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
