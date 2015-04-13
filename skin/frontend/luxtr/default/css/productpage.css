@@ -278,6 +278,7 @@ h2.product-name, h3.product-name, h4.product-name, h5.product-name, p.product-na
     font-size: 30px;
     font-weight: normal;
     color: #4a4b46;
+    text-transform: none;
 }
 p.product-desc {
     font-family: "Myriad Pro Light Semi Ext";
@@ -311,4 +312,38 @@ p.product-desc {
 
 .product-view .std {
     overflow: auto;
+}
+.tit {
+    clear: both;
+    font-family: "Myriad Pro Light";
+    font-size: 18px;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+}
+.tit .tit_desc{
+    font-family: "Myriad Pro Regular";
+}
+.block-related .block-title h2{
+    font-family: "Myriad Pro Light Semi Ext";
+    font-size: 32px;
+    color:#4a4b46;
+}
+ol.nav-primary {
+    font-family: "Myriad Pro Light Semi Ext";
+    font-size: 24px;
+    color:#6f6f6f;
+}
+
+.nav-primary a{
+    padding-right: 66px;
+}
+.nav-primary li.level0 > a:hover{
+    text-decoration: underline;
+    text-decoration-color: blue;
+    color: #6f6f6f;
+}
+.tit1 p.product-name{
+    text-transform: uppercase;
 }
