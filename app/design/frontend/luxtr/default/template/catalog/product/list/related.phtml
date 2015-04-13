@@ -25,6 +25,7 @@
  */
 ?>
 <?php if($this->getItems()->getSize()): ?>
+    <a id="alsolike"></a>
 <div class="block block-related">
     <div class="block-title">
         <h2><?php echo $this->__('Related Products') ?></h2>
@@ -51,6 +52,13 @@
                             <a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a>
                         <?php endif; ?>
                     </div>
+
+                    <form action="<?php echo $this->getAddToCartUrl($_item) ?>" method="post" id="product_addtocart_form_<?php echo $_item->getId()?>"<?php if($_item->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+                        <?php if(!$_item->isGrouped()): ?>
+                            <input type="text" name="qty" id="qty" maxlength="12" value="1" style="display:none;" />
+                        <?php endif; ?>
+                        <button class="button" type="button" onclick="this.form.submit()"><span><span><span><?php echo $this->__('Add to Cart') ?></span></span></span></button>
+                    </form>
                 </div>
             </li>
         <?php endforeach ?>

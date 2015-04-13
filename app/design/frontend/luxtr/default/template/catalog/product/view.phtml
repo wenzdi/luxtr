@@ -58,11 +58,7 @@
                     <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
                 </div>
 
-                <div class="price-info">
-                    <?php echo $this->getPriceHtml($_product); ?>
-                    <?php echo $this->getChildHtml('bundle_prices') ?>
-                    <?php echo $this->getTierPriceHtml() ?>
-                </div>
+
 
                 <div class="extra-info">
                     <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
@@ -77,7 +73,8 @@
                     </div>
                 <?php endif;?>
 
-
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_native_toolbox"></div>
 
 
                 <?php echo $this->getChildHtml('other');?>
@@ -102,18 +99,19 @@
                         <?php endif; ?>
                         <?php echo $this->getChildHtml('addto') ?>
 <!--                        --><?php //echo $this->getChildHtml('sharing') ?>
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <div class="addthis_native_toolbox"></div>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
                         <?php echo $this->getChildHtml('addto') ?>
 <!--                        --><?php //echo $this->getChildHtml('sharing') ?>
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <div class="addthis_native_toolbox"></div>
                     </div>
                 <?php endif; ?>
+            </div>
+            <div class="price-info">
+                <?php echo $this->getPriceHtml($_product); ?>
+                <?php echo $this->getChildHtml('bundle_prices') ?>
+                <?php echo $this->getTierPriceHtml() ?>
             </div>
 
 
@@ -176,20 +174,68 @@
         </script>
     </div>
 
-    <div class="product-collateral toggle-content tabs">
-        <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
-            <dl id="collateral-tabs" class="collateral-tabs">
-                <?php foreach ($detailedInfoGroup as $alias => $html):?>
-                    <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
-                    <dd class="tab-container">
-                        <div class="tab-content"><?php echo $html ?></div>
-                    </dd>
-                <?php endforeach;?>
-            </dl>
-        <?php endif; ?>
+    <ol class="nav-primary">
+        <li class="level0"><a class="scrolla" href="#specifications">Description</a></li>
+        <li class="level0"><a class="scrolla" href="#reviews">Reviews</a></li>
+        <li class="level0"><a class="scrolla" href="#alsolike">You may also like</a></li>
+    </ol>
+
+
+    <a id="specifications"></a>
+    <?php $_description = $this->getProduct()->getDescription(); ?>
+    <?php if ($_description): ?>
+        <h2><?php echo $this->__('Details') ?></h2>
+        <div class="std">
+            <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+        </div>
+    <?php endif; ?>
+    <a id="reviews"></a>
+    <div style="width:100%;height: 400px;">
+        reviews
     </div>
+
+    <?php echo $this->getChildHtml('related_products') ?>
+<!--    <div class="product-collateral toggle-content tabs">-->
+<!--        --><?php //if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+<!--            <dl id="collateral-tabs" class="collateral-tabs">-->
+<!--                --><?php //foreach ($detailedInfoGroup as $alias => $html):?>
+<!--                    <dt class="tab"><span>--><?php //echo $this->escapeHtml($this->getChildData($alias, 'title')) ?><!--</span></dt>-->
+<!--                    <dd class="tab-container">-->
+<!--                        <div class="tab-content">--><?php //echo $html ?><!--</div>-->
+<!--                    </dd>-->
+<!--                --><?php //endforeach;?>
+<!--            </dl>-->
+<!--        --><?php //endif; ?>
+<!--    </div>-->
 
     <?php echo $this->getChildHtml('upsell_products') ?>
     <?php echo $this->getChildHtml('product_additional_data') ?>
 
 </div>
+<script type="text/javascript">
+    $j(document).ready(function(){
+
+        var hashTagActive = "";
+        $j(".scrolla").click(function (event) {
+            if(hashTagActive != this.hash) { //this will prevent if the user click several times the same link to freeze the scroll.
+                event.preventDefault();
+                //calculate destination place
+                var dest = 0;
+
+
+                if ($j(this.hash).offset().top > $j(document).height() - $j(window).height()) {
+                    dest = $j(document).height() - $j(window).height();
+                } else {
+                    dest = $j(this.hash).offset().top;
+                }
+                //go to destination
+                $j('html,body').animate({
+                    scrollTop: dest
+                }, 2000, 'swing');
+                hashTagActive = this.hash;
+
+
+            }
+        });
+    });
+</script>

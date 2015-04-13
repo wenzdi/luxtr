@@ -166,10 +166,18 @@ textarea {
     background-color: #e74c3c;
     border-radius: 3px;
 }
+
 .cart .buttons-set .button:hover,
 .cart-table .button:hover,
 .sidebar .actions .button:hover,
 .button.button-secondary:hover {
+    background: #e74c3c;
+    cursor: pointer;
+}
+.button:hover,
+.cart-table .product-cart-actions .button:hover,
+#co-shipping-method-form .buttons-set .button:hover,
+.footer .button:hover {
     background: #e74c3c;
     cursor: pointer;
 }
@@ -268,7 +276,6 @@ textarea {
 h2.product-name, h3.product-name, h4.product-name, h5.product-name, p.product-name {
     font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
     font-size: 30px;
-    text-transform: uppercase;
     font-weight: normal;
     color: #4a4b46;
 }
@@ -277,4 +284,31 @@ p.product-desc {
     font-size: 18px;
     color: #4a4b46;
     word-wrap: break-word;
+}
+
+.addthis_native_toolbox {
+    padding-left: 25%;
+    border-bottom: 1px solid #cccccc;
+}
+.product-view .add-to-cart-wrapper {
+    width: 30%;
+}
+.product-view .price-info {
+    width: 10%;
+    float: right;
+    padding-left: 40px;
+}
+.product-view .add-to-cart{
+    border:none;
+}
+
+.std ol {
+    list-style: none;
+}
+.product img {
+    margin: 0 auto;
+}
+
+.product-view .std {
+    overflow: auto;
 }
