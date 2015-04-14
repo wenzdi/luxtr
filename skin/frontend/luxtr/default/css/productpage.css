@@ -249,9 +249,6 @@ textarea {
     max-width: 1260px;
     margin: 0 auto;
 }
-.skip-links{
-    padding-bottom: 14px;
-}
 
 .tab-content {
     overflow: auto;

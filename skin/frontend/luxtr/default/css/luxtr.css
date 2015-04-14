@@ -1,0 +1,9 @@
+ol.nav-primary li a{
+    font-family: "Myriad Pro Light Semi Ext";
+    font-size: 18px;
+    color:#303032;
+}
+
+.nav-primary li.level0 > a {
+    text-transform: none;
+}
