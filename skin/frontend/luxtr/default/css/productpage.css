@@ -185,6 +185,7 @@ textarea {
 
 .header-language-container .sharing-links {
     float: right;
+    padding-top: 7px;
 }
 
 .header-language-container .sharing-links:after {
@@ -244,6 +245,8 @@ textarea {
     margin: 0px;
     width: 100%;
     max-width: 100%;
+    background-color: #fbfbfb;
+    overflow: auto;
 }
 .page-header-container{
     max-width: 1260px;
@@ -343,4 +346,134 @@ ol.nav-primary {
 }
 .tit1 p.product-name{
     text-transform: uppercase;
+}
+
+.main-container, .footer-container {
+    position: relative;
+    max-width: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+body.cms-home .main-container {
+    padding-top: 0px;
+}
+
+.home_block1 {
+    background-color: #f8f8f8;
+    overflow: auto;
+}
+.home_block1 .entry_block{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.home1_text {
+    width: 65%;
+    float: left;
+}
+.home1_text .line1{
+    font-family: "Myriad Pro Regular";
+    font-size: 78px;
+    color: #2b7cef;
+    margin: 0px;
+}
+.home1_text .line2{
+    font-family: "Myriad Pro Light";
+    font-size: 60px;
+    color: #2b2b2b;
+    margin: 0px;
+}
+.home1_text .line3{
+    font-family: "Myriad Pro Light";
+    font-size: 18px;
+    color: #494949;
+    margin: 0px;
+}
+.home2_img img, .home3_img img {
+    margin: 0 auto;
+}
+.home2_text{
+    font-family: "Myriad Pro Light";
+    font-size: 24px;
+    color:#494949;
+    text-align: center;
+}
+
+.home2_text a{
+    text-decoration: underline;
+    color: #2b7cef;
+}
+.table_home td{
+    border-bottom: 1px solid #afafaf;
+}
+.table_home{
+    margin-bottom:100px;
+    color: #303030;
+    font-family: "Myriad Pro Regular";
+    font-size: 28px;
+}
+.home3_text {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.new_home {
+    width: 60%;
+    float: left;
+}
+
+.new_home .products-grid > li {
+    width: 100%;
+}
+
+.new_home .products-grid .product-image img{
+    width: auto;
+    float: left;
+}
+.cms-index-index .new_home .products-grid .actions{
+    display: block;
+}
+.cms-index-index .new_home .products-grid .actions .add-to-links{
+    display: none;
+}
+.home_block4 .entry_block{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.amazon_reviews {
+    float: left;
+    width: 40%;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+.author_review{
+    font-family: "Myriad Pro Light";
+    font-style: italic;
+}
+.home5_img img {
+    width: 33%;
+    float: left;
+    padding: 14px;
+}
+
+.home_block5 {
+    background-color: #ECECEC;
+    clear: both;
+    OVERFLOW: auto;
+}
+.home_block5 .home5_text{
+    text-align: center;
+}
+.home_block5 .home5_text .line1{
+    font-family: "Myriad Pro Regular";
+    font-size: 60px;
+    color: #2b7cef;
+}
+.home_block5 .home5_text .line2{
+    font-family: "Myriad Pro Light";
+    font-size: 48px;
+    color: #464646;
 }

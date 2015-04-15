@@ -24,8 +24,11 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
+<div class="home_block4">
+    <div class="entry_block">
+<div class="new_home">
 <?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
-<h2 class="subtitle"><?php echo $this->__('New Products') ?></h2>
+<!--<h2 class="subtitle">--><?php //echo $this->__('New Products') ?><!--</h2>-->
 <?php $_columnCount = $this->getColumnCount(); ?>
     <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col">
     <?php $i=0; foreach ($_products->getItems() as $_product): ?>
@@ -62,3 +65,4 @@
     <?php endforeach; ?>
     </ul>
 <?php endif; ?>
+</div>
