@@ -7,3 +7,18 @@ ol.nav-primary li a{
 .nav-primary li.level0 > a {
     text-transform: none;
 }
+.nav-primary {
+       margin-top:0px;
+}
+.nav-primary a.level0 {
+    padding: 0 5px;
+}
+
+.breadcrumbs {
+    clear: both;
+}
+@media only screen and (min-width: 771px) {
+    .skip-links {
+        clear: none;
+    }
+}
