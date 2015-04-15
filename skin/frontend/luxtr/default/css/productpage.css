@@ -453,3 +453,27 @@ body.cms-home .main-container {
     font-family: "Myriad Pro Light";
     font-style: italic;
 }
+.home5_img img {
+    width: 33%;
+    float: left;
+    padding: 14px;
+}
+
+.home_block5 {
+    background-color: #ECECEC;
+    clear: both;
+    OVERFLOW: auto;
+}
+.home_block5 .home5_text{
+    text-align: center;
+}
+.home_block5 .home5_text .line1{
+    font-family: "Myriad Pro Regular";
+    font-size: 60px;
+    color: #2b7cef;
+}
+.home_block5 .home5_text .line2{
+    font-family: "Myriad Pro Light";
+    font-size: 48px;
+    color: #464646;
+}
