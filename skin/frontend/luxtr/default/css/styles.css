@@ -3404,7 +3404,7 @@ a.skip-link {
   #header-nav {
     display: block;
     /* Force visibility */
-    border-bottom: 1px solid #ededed;
+    /*border-bottom: 1px solid #ededed;*/
   }
 }
 /* ============================================ *

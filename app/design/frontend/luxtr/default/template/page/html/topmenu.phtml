@@ -33,10 +33,26 @@
 ?>
 <?php $_menu = $this->getHtml('level-top') ?>
 
-<?php if($_menu): ?>
+
     <nav id="nav">
         <ol class="nav-primary">
+            <?php if($_menu): ?>
             <?php echo $_menu ?>
+            <?php endif ?>
+            <li class="level0 nav-1 first "><a href="http://luxtr.store.magecloud.net/luxtr.html" class="level0 ">Choose your Luxtr</a></li>
+            <li class="level0 nav-1 first "><a href="http://luxtr.store.magecloud.net/luxtr.html" class="level0 ">About Us</a></li>
+            <li class="level0 nav-1 first "><a href="http://luxtr.store.magecloud.net/luxtr.html" class="level0 ">Reviews</a></li>
+            <li class="level0 nav-1 first "><a href="http://luxtr.store.magecloud.net/luxtr.html" class="level0 ">Warranty</a></li>
+            <li class="level0 nav-1 first "><a href="http://luxtr.store.magecloud.net/luxtr.html" class="level0 ">FAQ</a></li>
+            <li class="level0 nav-1 first "><a href="http://luxtr.store.magecloud.net/luxtr.html" class="level0 ">Blog</a></li>
+            <li class="level0 nav-1 first "><a href="http://luxtr.store.magecloud.net/luxtr.html" class="level0 ">Contact Us</a></li>
+            <?php if(!Mage::getSingleton("customer/session")->isLoggedIn()) { ?>
+                <li class="level0 nav-1 first "><a href="<?php echo Mage::getUrl('customer/account/login/') ?>" class="level0 "><?php echo $this->__('Sign In'); ?></a></li>
+            <?php }else{ ?>
+                <li class="level0 nav-1 first "><a href="<?php echo Mage::getUrl('customer/account') ?>" class="level0 "><?php echo $this->__('My Account '); ?></a></li>
+                |
+                <li class="level0 nav-1 first "><a href="<?php echo Mage::getUrl('customer/account/logout/') ?>" class="level0 "><?php echo $this->__('Logout '); ?></a></li>
+            <?php } ?>
         </ol>
     </nav>
-<?php endif ?>
+
