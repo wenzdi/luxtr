@@ -477,3 +477,43 @@ body.cms-home .main-container {
     font-size: 48px;
     color: #464646;
 }
+.footer  .block-subscribe{
+    background-image: url(../images/subscribe_bg.png);
+    background-repeat: no-repeat;
+    width: 583px;
+    height: 249px;
+    margin-top: 40px;
+    margin-right: 80px;
+}
+.block-subscribe .block-title p{
+    padding: 0px;
+}
+
+.block-subscribe .block-title .line1{
+    color: #575757;
+    font-size: 22px;
+    font-family: "Myriad Pro Regular";
+    padding-top: 40px;
+    padding-left: 80px;
+}
+.block-subscribe .block-title .line2{
+    color: #838383;
+    font-size: 14px;
+    font-family: "Myriad Pro Light";
+    padding-left: 80px;
+}
+.footer .block-subscribe .input-box{
+    padding-left: 80px;
+    width: 62%;
+}
+.footer .block-subscribe .input-text{
+    height: 55px;
+}
+.footer .block-subscribe .actions .button {
+    height: 55px;
+    width: 122px;
+}
+.footer .button{
+    font-family: "Myriad Pro Semibold";
+    font-size: 17px;
+}
