@@ -187,22 +187,26 @@ textarea {
     float: right;
     padding-top: 7px;
 }
+.footer .sharing-links{
+    float: left;
+    margin-top: 40px;
+}
 
-.header-language-container .sharing-links:after {
+.header-language-container .sharing-links:after, .footer .sharing-links:after {
     content: '';
     display: table;
     clear: both;
 }
-.header-language-container .sharing-links li {
+.header-language-container .sharing-links li, .footer .sharing-links li {
     float: left;
 }
-.header-language-container .sharing-links a {
+.header-language-container .sharing-links a, .footer .sharing-links a {
     text-indent: -9999px;
     display: block;
     width: 30px;
     height: 26px;
 }
-.header-language-container .sharing-links a:hover {
+.header-language-container .sharing-links a:hover, .footer .sharing-links a:hover {
     opacity: 0.8;
 }
 .header-language-background{
@@ -211,20 +215,20 @@ textarea {
     padding-top: 3px;
 
 }
-.header-language-container .sharing-links a.link-facebook {
+.header-language-container .sharing-links a.link-facebook, .footer .sharing-links a.link-facebook {
     background-image: url(../images/fb.png);
     background-repeat: no-repeat;
 }
-.header-language-container .sharing-links a.link-twitter {
+.header-language-container .sharing-links a.link-twitter, .footer .sharing-links a.link-twitter {
     background-image: url(../images/tw.png);
     background-repeat: no-repeat;
 }
-.header-language-container .sharing-links a.link-instagram {
+.header-language-container .sharing-links a.link-instagram, .footer .sharing-links a.link-instagram {
     background-image: url(../images/in.png);
     background-repeat: no-repeat;
 }
 
-.header-language-container .sharing-links a:hover {
+.header-language-container .sharing-links a:hover, .footer .sharing-links a:hover {
     opacity: 0.8;
 
 }
@@ -453,6 +457,13 @@ body.cms-home .main-container {
     font-family: "Myriad Pro Light";
     font-style: italic;
 }
+.home_block4 {
+    overflow: auto;
+}
+.home5_img {
+    width: 1200px;
+    margin: 0 auto;
+}
 .home5_img img {
     width: 33%;
     float: left;
@@ -516,4 +527,66 @@ body.cms-home .main-container {
 .footer .button{
     font-family: "Myriad Pro Semibold";
     font-size: 17px;
+}
+.footer .links{
+    width: 45%;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+.footer .links li{
+    float: left;
+}
+.footer .links a {
+    padding: 0px 25px;
+    color: #787878;
+    font-family: "Myriad Pro Regular";
+    font-size: 14px;
+}
+.footer p.footer_links_text {
+    width: 40%;
+    margin-left: 85px;
+    text-align: justify;
+    word-wrap: break-word;
+    color: #787878;
+    font-family: "Myriad Pro Light";
+    font-size: 14px;
+
+}
+.footer .bugs, .footer address{
+    clear: none;
+    width: 34%;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    border: none;
+    color: #8c8c8c;
+    font-family: "Myriad Pro Light";
+    font-size: 13px;
+    margin-left: 85px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.new_home p.product-desc{
+    text-align: left;
+}
+
+.new_home .products-grid .product-name{
+    text-align: left;
+    font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
+    font-size: 30px;
+}
+.product-view {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.new_home  .products-grid .actions{
+    width: 10%;
+    float: left;
+    position: relative;
+}
+.new_home  .price-box{
+    width: 10%;
+    float: left;
 }
