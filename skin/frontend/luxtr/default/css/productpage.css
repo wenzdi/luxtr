@@ -6,7 +6,7 @@ table,
 textarea {
     font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
     color: #636363;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 1.5;
 }
 
@@ -95,7 +95,7 @@ textarea {
 }
 
 .product-view .product-shop .product-name .h1{
-    font-size: 36px;
+    font-size: 2.5em;
     font-family: "Myriad Pro Regular";
     color: #5b5b5b;
     text-transform: none;
@@ -134,7 +134,7 @@ textarea {
 }
 
 .short-description span{
-    font-size: 18px;
+    font-size: 1.2em;
     color: #464646;
     display: block;
 }
@@ -253,7 +253,7 @@ textarea {
     overflow: auto;
 }
 .page-header-container{
-    max-width: 1260px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -279,14 +279,14 @@ textarea {
 
 h2.product-name, h3.product-name, h4.product-name, h5.product-name, p.product-name {
     font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
-    font-size: 30px;
+    font-size: 2.1em;
     font-weight: normal;
     color: #4a4b46;
     text-transform: none;
 }
 p.product-desc {
     font-family: "Myriad Pro Light Semi Ext";
-    font-size: 18px;
+    font-size: 1.2em;
     color: #4a4b46;
     word-wrap: break-word;
 }
@@ -320,7 +320,7 @@ p.product-desc {
 .tit {
     clear: both;
     font-family: "Myriad Pro Light";
-    font-size: 18px;
+    font-size: 1.2em;
     margin-left: 60px;
     margin-right: 60px;
     border-top: 1px solid #ccc;
@@ -328,22 +328,27 @@ p.product-desc {
 }
 .tit .tit_desc{
     font-family: "Myriad Pro Regular";
+    margin:0px;
 }
 .block-related .block-title h2{
     font-family: "Myriad Pro Light Semi Ext";
-    font-size: 32px;
+    font-size: 2.2em;
     color:#4a4b46;
 }
 ol.nav-primary {
     font-family: "Myriad Pro Light Semi Ext";
-    font-size: 24px;
+    font-size: 1.7em;
     color:#6f6f6f;
 }
 
-.nav-primary a{
+.product-view .nav-primary a{
     padding-right: 66px;
+
 }
-.nav-primary li.level0 > a:hover{
+.product-view .nav-primary li.level0 > a{
+    text-transform: uppercase;
+}
+.product-view .nav-primary li.level0 > a:hover{
     text-decoration: underline;
     text-decoration-color: blue;
     color: #6f6f6f;
@@ -376,21 +381,28 @@ body.cms-home .main-container {
     width: 65%;
     float: left;
 }
+.home1_text .btn-cart{
+    float: left;
+    margin-top: 30px;
+}
+.home1_text img{
+    width: 150px;
+}
 .home1_text .line1{
     font-family: "Myriad Pro Regular";
-    font-size: 78px;
+    font-size: 4.2em;
     color: #2b7cef;
     margin: 0px;
 }
 .home1_text .line2{
     font-family: "Myriad Pro Light";
-    font-size: 60px;
+    font-size: 3.4em;
     color: #2b2b2b;
     margin: 0px;
 }
 .home1_text .line3{
     font-family: "Myriad Pro Light";
-    font-size: 18px;
+    font-size: 1.2em;
     color: #494949;
     margin: 0px;
 }
@@ -399,7 +411,7 @@ body.cms-home .main-container {
 }
 .home2_text{
     font-family: "Myriad Pro Light";
-    font-size: 24px;
+    font-size: 1.7em;
     color:#494949;
     text-align: center;
 }
@@ -415,7 +427,7 @@ body.cms-home .main-container {
     margin-bottom:100px;
     color: #303030;
     font-family: "Myriad Pro Regular";
-    font-size: 28px;
+    font-size: 2em;
 }
 .home3_text {
     width: 80%;
@@ -453,9 +465,35 @@ body.cms-home .main-container {
     background-color: #f8f8f8;
     padding: 20px;
 }
-.author_review{
+.amazon_reviews p {
+    clear: both;
+    margin-top: 20px;
+}
+.amazon_reviews img {
+    margin-left: 10px;
+    padding-left: 10px;
+}
+.amazon_reviews .author_review{
     font-family: "Myriad Pro Light";
     font-style: italic;
+    float: left;
+}
+.amazon_head{
+    text-align: right;
+    background-image: url(../images/head_reviews.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    overflow: auto;
+
+}
+.amazon_head .line1{
+     display: block;
+ }
+.amazon_head img{
+    float: right;
+}
+.amazon_head a{
+    float: right;
 }
 .home_block4 {
     overflow: auto;
@@ -480,12 +518,12 @@ body.cms-home .main-container {
 }
 .home_block5 .home5_text .line1{
     font-family: "Myriad Pro Regular";
-    font-size: 60px;
+    font-size: 4.2em;
     color: #2b7cef;
 }
 .home_block5 .home5_text .line2{
     font-family: "Myriad Pro Light";
-    font-size: 48px;
+    font-size: 3.4em;
     color: #464646;
 }
 .footer  .block-subscribe{
@@ -502,14 +540,14 @@ body.cms-home .main-container {
 
 .block-subscribe .block-title .line1{
     color: #575757;
-    font-size: 22px;
+    font-size: 1.5em;
     font-family: "Myriad Pro Regular";
     padding-top: 40px;
     padding-left: 80px;
 }
 .block-subscribe .block-title .line2{
     color: #838383;
-    font-size: 14px;
+    font-size: 1em;
     font-family: "Myriad Pro Light";
     padding-left: 80px;
 }
@@ -526,7 +564,7 @@ body.cms-home .main-container {
 }
 .footer .button{
     font-family: "Myriad Pro Semibold";
-    font-size: 17px;
+    font-size: 1.1em;
 }
 .footer .links{
     width: 45%;
@@ -540,7 +578,7 @@ body.cms-home .main-container {
     padding: 0px 25px;
     color: #787878;
     font-family: "Myriad Pro Regular";
-    font-size: 14px;
+    font-size: 1em;
 }
 .footer p.footer_links_text {
     width: 40%;
@@ -549,7 +587,7 @@ body.cms-home .main-container {
     word-wrap: break-word;
     color: #787878;
     font-family: "Myriad Pro Light";
-    font-size: 14px;
+    font-size: 1em;
 
 }
 .footer .bugs, .footer address{
@@ -561,7 +599,7 @@ body.cms-home .main-container {
     border: none;
     color: #8c8c8c;
     font-family: "Myriad Pro Light";
-    font-size: 13px;
+    font-size: 0.9em;
     margin-left: 85px;
     text-align: left;
     margin-top: 50px;
@@ -574,7 +612,7 @@ body.cms-home .main-container {
 .new_home .products-grid .product-name{
     text-align: left;
     font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
-    font-size: 30px;
+    font-size: 2.1em;
 }
 .product-view {
     width: 1200px;
@@ -589,4 +627,35 @@ body.cms-home .main-container {
 .new_home  .price-box{
     width: 10%;
     float: left;
+}
+
+.block.block-cart {
+    width: 205px;
+    float: right;
+    margin-top: -40px;
+}
+.block-cart .block-content {
+    width: 100px;
+    float: left;
+}
+.block-cart .actions {
+    margin: 10px 0 0;
+    float: left;
+}
+.block-cart span.price {
+    background-color: #fff;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.block-cart span.total_qty {
+    background-color: #656565;
+    padding: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+}
+
+.block-cart p.subtotal {
+    margin-top: 10px;
 }

@@ -98,6 +98,7 @@
                     <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml">
                         <block type="page/html_topmenu_renderer" name="catalog.topnav.renderer" template="page/html/topmenu/renderer.phtml"/>
                     </block>
+                    <block type="checkout/cart_sidebar" name="cart_header" as="cartHeader" template="checkout/cart/cart_header.phtml"/>
                 </block>
                 <block type="page/html_wrapper" name="top.container" as="topContainer" translate="label">
                     <label>Page Header</label>
