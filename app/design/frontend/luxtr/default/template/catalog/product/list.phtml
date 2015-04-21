@@ -165,6 +165,24 @@
             <?php /*if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
             <?php endif*/ ?>
         <?php endforeach ?>
+        <li class="item  last">
+            <div class="lastitem">
+                <img src="/skin/frontend/luxtr/default/images/logo_vip.png"/>
+                <p class="line1">VIP Membership</p>
+                <p class="line2">
+                    Free Products and Coupon Deals!
+                </p>
+                <p class="line3">Join our VIP Club and this will give you the opportunity to get free <br/>products and coupons deals on product releases from Luxtr!</p>
+                <div class="vip_club">
+                    <div class="input-box">
+                        <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter2" title="your email" placeholder="YOUR EMAIL" class="input-text required-entry validate-email" />
+                    </div>
+                    <div class="actions">
+                        <button type="submit" title="join our vip club" class="button"><span><span>join our vip club</span></span></button>
+                    </div>
+                </div>
+            </div>
+        </li>
     </ul>
     <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>

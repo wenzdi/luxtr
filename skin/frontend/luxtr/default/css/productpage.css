@@ -624,9 +624,10 @@ body.cms-home .main-container {
     float: left;
     position: relative;
 }
-.new_home  .price-box{
+.new_home .price-box{
     width: 10%;
     float: left;
+    margin-top:15px;
 }
 
 .block.block-cart {
@@ -658,4 +659,115 @@ body.cms-home .main-container {
 
 .block-cart p.subtotal {
     margin-top: 10px;
+}
+.is-blog .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.post-entry p {
+    width: 78%;
+    margin-left: 22%;
+    font-family: "Myriad Pro Light";
+    font-size: 1.2em;
+    color: #4a4b46;
+}
+.featured-image {
+    width: 20%;
+    float: left;
+    border:none;
+}
+.post-meta{
+    font-family: "Myriad Pro Regular";
+    font-size: 1em;
+    color: #4a4b46;
+    font-style: normal;
+}
+.post-list h2{
+    color: #2b7cef;
+    font-family: "Myriad Pro Light Semi Ext";
+    font-size: 1.7em;
+}
+.introduction{
+    color:#969696;
+    font-family: "Myriad Pro Light Semi Ext";
+    font-size: 1em;
+}
+
+.category-products {
+    width: 1200px;
+    margin: 40px auto;
+}
+
+@media only screen and (min-width: 480px) {
+    .category-choose-your-luxtr .products-grid > li {
+        width: 45.8642%;
+        margin-right: 3.7037%;
+        background-color: #f8f8f8;
+    }
+}
+.products-grid .product-image img {
+    width: 90%;
+    height: auto;
+    margin: 5% auto;
+}
+.choose{
+    font-family: "Myriad Pro Light Semi Ext";
+    color:#848484;
+    background-color: #f8f8f8;
+}
+.choose_entry{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0px;
+}
+.choose .line1{
+    font-size: 3em;
+    text-transform: uppercase;
+}
+.choose .line2{
+    font-size: 1.2em;
+}
+.lastitem{
+    text-align: center;
+}
+.lastitem .line1{
+    font-family: "Myriad Pro Semibold";
+    color:#090a05;
+    font-size: 4em;
+}
+.lastitem .line2{
+    color: #090a05;
+    font-family: "Myriad Pro Regular";
+    font-size: 2em;
+}
+.lastitem .line3{
+    color: #4a4b46;
+    font-family: "Myriad Pro Light";
+    font-size: 1.1em;
+
+}
+.lastitem img{
+    margin: 0 auto;
+}
+
+.products-grid .vip_club .actions {
+    position: inherit;
+}
+
+.vip_club input[type=email] {
+    height: 60px;
+}
+.vip_club button.button {
+    height: 60px;
+    width: 365px;
+    font-family: "Myriad Pro Semibold";
+    font-size: 2em;
+}
+.choose_bottom .entry_block {
+    width: 1200px;
+    margin: 0 auto;
+}
+.choose_bottom .entry_block img{
+    width:100%;
 }
