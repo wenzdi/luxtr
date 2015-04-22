@@ -28,7 +28,7 @@
     <div class="entry_block">
 <div class="new_home">
 <?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
-<!--<h2 class="subtitle">--><?php //echo $this->__('New Products') ?><!--</h2>-->
+<h2 class="subtitle">New releases</h2>
 <?php $_columnCount = $this->getColumnCount(); ?>
     <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col">
     <?php $i=0; foreach ($_products->getItems() as $_product): ?>
@@ -40,7 +40,14 @@
                     <?php $_imgSize = 260; ?>
                     <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
                 </a>
-                <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>"><?php echo $this->escapeHtml($_product->getName()) ?></a></h3>
+                <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_product->getName()) ?>">
+                    <?php $productId = $_product->getId();
+                     $partfirst = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_first');
+                    $partlenght = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_lenght');
+                    $partcolor = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_color');
+                    echo $partfirst.'-<span class="spanlenght">'.$partlenght.'</span>-(<span class="spancolor">'.$partcolor.'</span>)';?>
+                    </a>
+                </h3>
                 <p class="product-desc">
                     <?php echo $description = $_product->getShortDescription(); ?>
                 </p>

@@ -186,6 +186,7 @@ textarea {
 .header-language-container .sharing-links {
     float: right;
     padding-top: 7px;
+    margin-right: -10px;
 }
 .footer .sharing-links{
     float: left;
@@ -386,7 +387,7 @@ body.cms-home .main-container {
     margin-top: 30px;
 }
 .home1_text img{
-    width: 150px;
+    width: 130px;
 }
 .home1_text .line1{
     font-family: "Myriad Pro Regular";
@@ -414,6 +415,7 @@ body.cms-home .main-container {
     font-size: 1.7em;
     color:#494949;
     text-align: center;
+    margin-bottom:50px;
 }
 
 .home2_text a{
@@ -423,8 +425,23 @@ body.cms-home .main-container {
 .table_home td{
     border-bottom: 1px solid #afafaf;
 }
+td.grayfon{
+    background-color: #f8f8f8;
+    width: 23%;
+    text-align: center;
+}
+td.grayfon img{
+    margin:0 auto;
+}
+td.val{
+    text-align: center;
+    width: 23%;
+}
+td.val img{
+    margin:0 auto;
+}
 .table_home{
-    margin-bottom:100px;
+    margin-bottom:70px;
     color: #303030;
     font-family: "Myriad Pro Regular";
     font-size: 2em;
@@ -436,8 +453,9 @@ body.cms-home .main-container {
 
 
 .new_home {
-    width: 60%;
+    width: 50%;
     float: left;
+    margin-right: 5%;
 }
 
 .new_home .products-grid > li {
@@ -457,13 +475,15 @@ body.cms-home .main-container {
 .home_block4 .entry_block{
     width: 1200px;
     margin: 0 auto;
+    margin-top: 40px;
 }
 
 .amazon_reviews {
     float: left;
-    width: 40%;
+    width: 45%;
     background-color: #f8f8f8;
-    padding: 20px;
+    padding: 50px;
+    margin-top: 70px;
 }
 .amazon_reviews p {
     clear: both;
@@ -501,6 +521,8 @@ body.cms-home .main-container {
 .home5_img {
     width: 1200px;
     margin: 0 auto;
+    overflow: auto;
+    margin-bottom: 90px;
 }
 .home5_img img {
     width: 33%;
@@ -518,12 +540,12 @@ body.cms-home .main-container {
 }
 .home_block5 .home5_text .line1{
     font-family: "Myriad Pro Regular";
-    font-size: 4.2em;
+    font-size: 3.2em;
     color: #2b7cef;
 }
 .home_block5 .home5_text .line2{
     font-family: "Myriad Pro Light";
-    font-size: 3.4em;
+    font-size: 2.4em;
     color: #464646;
 }
 .footer  .block-subscribe{
@@ -579,6 +601,7 @@ body.cms-home .main-container {
     color: #787878;
     font-family: "Myriad Pro Regular";
     font-size: 1em;
+    text-transform: none;
 }
 .footer p.footer_links_text {
     width: 40%;
@@ -625,7 +648,7 @@ body.cms-home .main-container {
     position: relative;
 }
 .new_home .price-box{
-    width: 10%;
+    width: 20%;
     float: left;
     margin-top:15px;
 }
@@ -633,7 +656,7 @@ body.cms-home .main-container {
 .block.block-cart {
     width: 205px;
     float: right;
-    margin-top: -40px;
+    margin-top: -45px;
 }
 .block-cart .block-content {
     width: 100px;
@@ -770,4 +793,35 @@ body.cms-home .main-container {
 }
 .choose_bottom .entry_block img{
     width:100%;
+}
+.spanlenght{
+    color:#2b7cef;
+}
+.spancolor{
+    font-style: italic;
+    font-size: 0.9em;
+
+}
+.products-grid .product-name a, .products-list .product-name a{
+    text-transform: none;
+}
+.price-box .price{
+    font-family: "Myriad Pro Semibold Italic";
+    color:#404040;
+    font-size: 1.8em;
+}
+.cms-index-index h2.subtitle{
+    border:none;
+    text-align: left;
+    font-family: "Myriad Pro Light Semi Ext";
+    font-size: 2em;
+    color:#848484;
+}
+
+.home_block4:before{
+    content: '';
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    border-bottom: 1px solid #dfdfdf;
 }

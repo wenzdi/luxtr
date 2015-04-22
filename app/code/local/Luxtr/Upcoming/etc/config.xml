@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Luxtr_Upcoming>
+      <version>0.1.0</version>
+    </Luxtr_Upcoming>
+  </modules>
+  <global>
+    <helpers>
+      <upcoming>
+        <class>Luxtr_Upcoming_Helper</class>
+      </upcoming>
+    </helpers>
+  </global>
+</config> 

@@ -55,7 +55,13 @@
 
             <div class="product-shop">
                 <div class="product-name">
-                    <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
+                    <span class="h1">
+                            <?php $productId = $_product->getId();
+                            $partfirst = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_first');
+                            $partlenght = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_lenght');
+                            $partcolor = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_color');
+                            echo $partfirst.'-<span class="spanlenght">'.$partlenght.'</span>-(<span class="spancolor">'.$partcolor.'</span>)';?>
+                    </span>
                 </div>
                 <?php $this->helper('yotpo')->showBottomline($this, $_product); ?>
 
