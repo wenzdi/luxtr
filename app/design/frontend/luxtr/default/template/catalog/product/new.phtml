@@ -49,7 +49,10 @@
                     </a>
                 </h3>
                 <p class="product-desc">
-                    <?php echo $description = $_product->getShortDescription(); ?>
+                    <?php
+                    $compa = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'compatibility');
+                    echo $compa;
+                    ?>
                 </p>
                 <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                 <?php echo $this->getPriceHtml($_product, true, '-new') ?>
