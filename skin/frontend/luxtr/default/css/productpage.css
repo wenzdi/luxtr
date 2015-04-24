@@ -626,6 +626,7 @@ td.val img{
     margin-left: 85px;
     text-align: left;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .new_home p.product-desc{
@@ -727,7 +728,7 @@ td.val img{
         width: 45.8642%;
         margin-right: 3.7037%;
         background-color: #f8f8f8;
-        min-height: 580px;
+        min-height: 819px;
     }
 }
 
@@ -908,7 +909,7 @@ p.warranty_text{
     padding-bottom: 10px;
 }
 
-.choose_bottom:before {
+.choose_bottom:before, .upcoming:before {
     content: '';
     position: absolute;
     width: 90%;
@@ -925,4 +926,46 @@ p.warranty_text{
 .choose_bottom {
     overflow: auto;
     background-color: #fff;
+}
+.upcoming_wrapper{
+    background-color: #fff;
+    overflow: auto;
+}
+.upcoming h4{
+    color:#b1b1b1;
+    font-family: "Myriad Pro Regular";
+    font-size: 2em;
+    font-weight: normal;
+    padding-top:20px;
+}
+.upcoming .products-grid > li {
+    width: 30.8642%;
+    margin-right: 3.7037%;
+    min-height: 500px;
+    background-color: #fff;
+}
+.upcoming .products-grid > li:nth-child(3) {
+    margin-right: 0px;
+}
+
+.learnmore{
+    background-color: #b1b1b1 !important;
+    margin-left: 10%;
+}
+.upcoming .products-grid .product-name{
+    font-family: "Myriad Pro Regular";
+    font-size: 2em;
+    color: #5b5b5b;
+}
+
+
+.products-grid .product-name, .products-list .product-name{
+    font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
+    font-size: 2.1em;
+    font-weight: normal;
+    color: #4a4b46;
+    text-transform: none;
+    width: 80%;
+    margin-left: 10%;
+    text-align: left;
 }

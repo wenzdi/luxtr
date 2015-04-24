@@ -1,0 +1,110 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+/* @var $this Mage_Catalog_Block_Product_List */
+?>
+<?php
+$_productCollection=$this->getLoadedProductCollection();
+$_helper = $this->helper('catalog/output');
+$current_store_id = Mage::app()->getStore()->getId();
+?>
+<?php if(!$_productCollection->count()): ?>
+    <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+    <div class="upcoming_wrapper">
+    <div class="category-products upcoming">
+
+        <?php // List mode ?>
+        <?php if($this->getMode()!='grid'): ?>
+            <?php $_iterator = 0; ?>
+
+        <?php else: ?>
+
+        <?php // Grid Mode ?>
+
+        <?php $_collectionSize = $_productCollection->count(); ?>
+        <?php $_columnCount = 3; ?>
+            <h4>Upcoming releases</h4>
+            <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col">
+                <?php $i=0; foreach ($_productCollection as $_product): ?>
+                    <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+                            <?php $_imgSize = 210; ?>
+                            <img id="product-collection-image-<?php echo $_product->getId(); ?>"
+                                 src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
+                                 alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+                        </a>
+                        <div class="product-info">
+                            <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+                                    <?php $productId = $_product->getId();
+                                    $partfirst = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_first', $current_store_id);
+                                    $partlenght = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_lenght', $current_store_id);
+                                    $partcolor = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'part_color', $current_store_id);
+                                    echo $partfirst.'-<span class="spanlenght">'.$partlenght.'</span>-(<span class="spancolor">'.$partcolor.'</span>)';?>
+                                </a></h2>
+                            <p class="product-desc">
+                                <?php
+                                $compa = Mage::getResourceModel('catalog/product')->getAttributeRawValue($productId, 'compatibility', $current_store_id);
+                                echo $compa;
+                                ?>
+                            </p>
+
+
+<!--                            --><?php //echo $this->getPriceHtml($_product, true) ?>
+                            <?php if($_product->getRatingSummary()): ?>
+                                <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                            <?php endif; ?>
+                            <div class="actions">
+                                <?php if($_product->isSaleable() && !$_product->canConfigure()): ?>
+                                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                <?php elseif($_product->isSaleable()): ?>
+                                    <a title="<?php echo $this->__('View Details') ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a>
+                                <?php else: ?>
+                                    <a title="Learn More" class="button learnmore" href="<?php echo $_product->getProductUrl() ?>">Learn More</a>
+<!--                                    <p class="availability out-of-stock"><span>--><?php //echo $this->__('Out of stock') ?><!--</span></p>-->
+                                <?php endif; ?>
+
+                            </div>
+                        </div>
+                    </li>
+
+                <?php endforeach ?>
+            </ul>
+
+            <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
+        <?php endif; ?>
+
+
+      </div>
+    </div>
+<?php endif; ?>
+
