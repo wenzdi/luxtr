@@ -919,7 +919,7 @@ p.warranty_text{
     border:none;
     background-color: #f8f8f8;
     padding-top: 0px;
-    overflow: :auto;
+    overflow: auto;
 }
 
 .choose_bottom {
