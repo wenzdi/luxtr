@@ -16,7 +16,12 @@ textarea {
     font-weight: normal;
     src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff');
 }
-
+@font-face {
+    font-family: 'Myriad Pro Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Italic'), url('../fonts/Myriad_Pro_Italic.woff') format('woff');
+}
 
 @font-face {
     font-family: 'Myriad Pro Condensed';
@@ -462,6 +467,14 @@ td.val img{
     width: 100%;
 }
 
+.new_home .products-grid .product-name {
+    width: 100%;
+}
+.new_home .products-grid a.product-image {
+    width: 50%;
+    margin-left: 0px;
+}
+
 .new_home .products-grid .product-image img{
     width: auto;
     float: left;
@@ -722,13 +735,20 @@ td.val img{
     width: 1200px;
     margin: 40px auto;
 }
-
 @media only screen and (min-width: 480px) {
     .category-choose-your-luxtr .products-grid > li {
-        width: 45.8642%;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 960px) {
+    .category-choose-your-luxtr .products-grid > li {
+        width: 48%;
         margin-right: 3.7037%;
         background-color: #f8f8f8;
         min-height: 819px;
+    }
+    .products-grid > li:nth-child(even) {
+        margin-right: 0px;
     }
 }
 
@@ -968,4 +988,45 @@ p.warranty_text{
     width: 80%;
     margin-left: 10%;
     text-align: left;
+}
+
+.price-box .old-price .price{
+    font-family: "Myriad Pro Italic";
+    font-size: 1.3em;
+    color: #797979;
+}
+
+
+
+
+
+div.onestepcheckout-threecolumns div.onestepcheckout-column-right,
+div.onestepcheckout-threecolumns div.onestepcheckout-column-middle,
+div.onestepcheckout-threecolumns div.onestepcheckout-column-left{
+    width: 1200px;
+    margin: 0 auto;
+    clear: both;
+    background: none;
+    float: none;
+}
+
+
+div#shipping_address {
+    width: 50%;
+    float: left;
+}
+
+div#billing_address {
+    width: 50%;
+    float: left;
+}
+
+div.checkoutcontainer div.input-country select, div.checkoutcontainer div.input-region select {
+    width: 83% !important;
+}
+div.checkoutcontainer div.input-region{
+    width: 100%;
+}
+p.onestepcheckout-numbers-1, p.onestepcheckout-numbers-2, p.onestepcheckout-numbers-3, p.onestepcheckout-numbers-4{
+    background: none;
 }
