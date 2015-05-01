@@ -531,7 +531,7 @@ class Idev_OneStepCheckout_Helper_Checkout extends Mage_Core_Helper_Abstract
     {
         $temp = rtrim(ltrim($this->temp));
 
-        if(!$dev) {
+        /*if(!$dev) {
             $original = $this->checkEntry($_SERVER['SERVER_NAME'], $temp);
             $wildcard = $this->checkEntry($this->getDomain(), $temp);
         } else {
@@ -541,7 +541,7 @@ class Idev_OneStepCheckout_Helper_Checkout extends Mage_Core_Helper_Abstract
 
         if(!$original && !$wildcard) {
             return false;
-        }
+        }*/
 
         return true;
     }
