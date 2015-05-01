@@ -752,15 +752,21 @@ td.val img{
     }
 }
 
-.choose{
+.choose, .title_checkout{
     font-family: "Myriad Pro Light Semi Ext";
     color:#848484;
     background-color: #f8f8f8;
 }
-.choose_entry{
+.choose_entry, .title_checkout_entry{
     width: 1200px;
     margin: 0 auto;
     padding: 20px 0px;
+}
+.title_checkout_entry h1{
+    font-family: "Myriad Pro Light Semi Ext";
+    color:#848484;
+    font-size: 2em;
+    text-transform: none;
 }
 .choose .line1{
     font-size: 3em;
@@ -1003,11 +1009,20 @@ p.warranty_text{
 div.onestepcheckout-threecolumns div.onestepcheckout-column-right,
 div.onestepcheckout-threecolumns div.onestepcheckout-column-middle,
 div.onestepcheckout-threecolumns div.onestepcheckout-column-left{
-    width: 1200px;
+    width: 960px;
     margin: 0 auto;
     clear: both;
     background: none;
     float: none;
+    overflow: auto;
+    padding-left: 35px;
+}
+
+.checkout_border{
+    width: 960px;
+    margin: 0 auto;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
 }
 
 
@@ -1029,4 +1044,18 @@ div.checkoutcontainer div.input-region{
 }
 p.onestepcheckout-numbers-1, p.onestepcheckout-numbers-2, p.onestepcheckout-numbers-3, p.onestepcheckout-numbers-4{
     background: none;
+}
+
+#onestepcheckout-form .group-select{
+    padding: 0px !important;
+}
+
+div.checkoutcontainer{
+    border: none;
+}
+
+.onestepcheckout-shipping-method:before {
+    content: '';
+    width: 900px;
+    border-bottom: 1px solid #dfdfdf;
 }
