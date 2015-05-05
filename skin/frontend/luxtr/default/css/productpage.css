@@ -1059,3 +1059,39 @@ div.checkoutcontainer{
     width: 900px;
     border-bottom: 1px solid #dfdfdf;
 }
+
+.payment-methods dt {
+    padding: 5px 0;
+    width: 200px;
+    float: left;
+}
+
+@media only screen and (min-width: 771px){
+    .logo {
+        max-width: 190px;
+    }
+}
+
+.page-title h1 {
+    width: 1200px;
+    margin: 10px auto;
+}
+
+.cart-empty p {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.checkoutcontainer li.shipping-address-title,p.onestepcheckout-numbers-1,
+p.onestepcheckout-numbers-2, p.onestepcheckout-numbers-3, p.onestepcheckout-numbers-4{
+    color:#2b7cef;
+    font-family: "Myriad Pro Light Semi Ext";
+    font-size: 1.5em;
+    padding-left: 0px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+td.name img {
+    float: left;
+}
