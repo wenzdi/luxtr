@@ -56,10 +56,9 @@ $checkoutHelper = Mage::helper('onestepcheckout/checkout');
 
                 <input value="<?php echo $item->getQty(); ?>" id="item_qty_<?php echo $item->getId() ?>" size="4" title="Qty" class="input-text qty" maxlength="12">
 
-                <button type="button" onclick="update_qty(<?php echo $item->getId() ?>)" name="update_item_qty_action" value="update_qty" title="Update Qty" class="btn-update-qty"><span><span>Update</span></span></button>
 
-                <span class="onestepcheckout-product-remove" onclick="product_remove(<?php echo $item->getProduct()->getId() ?>)">Remove</span>
-                <!--<a href="javascript:void(0);" class="osc_item_id" url="<?php /*echo $this->getUrl('onestepcheckout/ajax/change_cart/'); */?>" id="<?php /*echo $item->getId() */?>">x Remove</a>-->
+
+
 
             </td>
             <td class="total">
