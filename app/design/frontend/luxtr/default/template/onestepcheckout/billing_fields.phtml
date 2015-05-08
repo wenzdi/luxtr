@@ -75,9 +75,8 @@ $dataHelper = Mage::helper('onestepcheckout');
 
 <?php if(!$this->settings['exclude_country_id']):?>
 <?php
-$billingFields['country_id'] = '
+$billingFields['country_id'] = '<label for="billing:country_id">'.$this->__('Country').' <span class="required"></span></label><br />
     <div class="input-box input-country'.((in_array('country', $formErrors)) ? ' input-error' : '').'">
-        <label for="billing:country_id">'.$this->__('Country').' <span class="required"></span></label><br />
             '.$this->getCountryHtmlSelect('billing').'
     </div>';
 ?>
@@ -87,9 +86,8 @@ $billingFields['country_id'] = '
 ?>
 <?php endif; ?>
 <?php if(!$this->settings['exclude_region']): ?>
-    <?php $billingFields['region_id'] = '
+    <?php $billingFields['region_id'] = '<label for="billing:region">'.$this->__('State/Province').' <span class="required"></span></label><br/>
         <div class="input-box input-region'.((in_array('region', $formErrors)) ? ' input-error' : '').'">
-            <label for="billing:region">'.$this->__('State/Province').' <span class="required"></span></label><br/>
             <select id="billing:region_id" name="billing[region_id]" title="'.$this->__('State/Province').'" class="validate-select" style="display:none">
                 <option value="">'.$this->__('Please select region, state or province').'</option>
             </select>

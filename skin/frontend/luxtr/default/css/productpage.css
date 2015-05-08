@@ -10,6 +10,13 @@ textarea {
     line-height: 1.5;
 }
 
+label{
+    font-family: "Myriad Pro Light", Verdana, Arial, sans-serif;
+    color: #636363;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
 @font-face {
     font-family: 'Myriad Pro Regular';
     font-style: normal;
@@ -1037,10 +1044,10 @@ div#billing_address {
 }
 
 div.checkoutcontainer div.input-country select, div.checkoutcontainer div.input-region select {
-    width: 83% !important;
+    width: 100% !important;
 }
-div.checkoutcontainer div.input-region{
-    width: 100%;
+div.checkoutcontainer div.input-country, div.checkoutcontainer div.input-region{
+    width: 83%;
 }
 p.onestepcheckout-numbers-1, p.onestepcheckout-numbers-2, p.onestepcheckout-numbers-3, p.onestepcheckout-numbers-4{
     background: none;
@@ -1094,4 +1101,52 @@ p.onestepcheckout-numbers-2, p.onestepcheckout-numbers-3, p.onestepcheckout-numb
 
 td.name img {
     float: left;
+}
+div.checkoutcontainer .input-country, div.checkoutcontainer .input-region{
+    border:0px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fff url("../images/icon_dropdown.png") no-repeat 98% 50%;
+    width: 83%;
+    margin-left: 0px;
+}
+div.checkoutcontainer div.input-country select, div.checkoutcontainer div.input-region select{
+    padding: 5px 8px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-transform: uppercase;
+    color: #91a193;
+    font-family: Arial;
+    font-size: 10px;
+}
+
+label.required:after {
+    content: "";
+}
+
+.orange.onestepcheckout-button, .orange.onestepcheckout-button:visited {
+    background: none;
+    background-color: #e74c3c;
+    width: 290px;
+    height: 54px;
+
+}
+.onestepcheckout-button, .onestepcheckout-button:visited{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1,7em;
+}
+.onestepcheckout-button:after{
+    content: '>\0000a0';
+}
+.mar_right{
+    margin-right: 10px;
 }
