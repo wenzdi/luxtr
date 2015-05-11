@@ -1013,7 +1013,7 @@ p.warranty_text{
 
 
 
-div.onestepcheckout-threecolumns div.onestepcheckout-column-right,
+
 div.onestepcheckout-threecolumns div.onestepcheckout-column-middle,
 div.onestepcheckout-threecolumns div.onestepcheckout-column-left{
     width: 960px;
@@ -1022,7 +1022,15 @@ div.onestepcheckout-threecolumns div.onestepcheckout-column-left{
     background: none;
     float: none;
     overflow: auto;
-    padding-left: 35px;
+    padding-left: 60px;
+}
+div.onestepcheckout-threecolumns div.onestepcheckout-column-right{
+    width: 960px;
+    margin: 0 auto;
+    clear: both;
+    background: none;
+    float: none;
+    overflow: auto;
 }
 
 .checkout_border{
@@ -1127,7 +1135,54 @@ div.checkoutcontainer div.input-country select, div.checkoutcontainer div.input-
     font-family: Arial;
     font-size: 10px;
 }
+ .checkoutcontainer .payment-methods .input-box-type{
+     border:0px;
+     padding: 0;
+     margin: 0;
+     border: 1px solid #ccc;
+     border-radius: 3px;
+     overflow: hidden;
+     background: #fff url("../images/icon_dropdown.png") no-repeat 98% 50%;
+     margin-left: 0px;
+     width: 100%;
+     margin-top: 2px;
+     height: 38px;
+ }
 
+.checkoutcontainer .payment-methods .input-box .sel_date{
+    border:0px;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fff url("../images/icon_dropdown.png") no-repeat 98% 50%;
+    margin-left: 0px;
+    width: 49%;
+    height: 38px;
+}
+ .type_p, .number_p, .exp_d{
+     width: 45%;
+     float: left;
+ }
+li.type_p {
+    margin-right: 7%;
+}
+.checkoutcontainer .payment-methods .input-box-type select, .checkoutcontainer .payment-methods .input-box select.month,
+.checkoutcontainer .payment-methods .input-box select.year{
+    padding: 5px 8px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-transform: uppercase;
+    color: #91a193;
+    font-family: Arial;
+    font-size: 10px;
+    width: 100% !important;
+}
 label.required:after {
     content: "";
 }
@@ -1149,4 +1204,88 @@ label.required:after {
 }
 .mar_right{
     margin-right: 10px;
+}
+
+
+div.checkoutcontainer div.input-address-short .input-text, div.checkoutcontainer div.input-firstname .input-text, div.checkoutcontainer div.input-lastname .input-text, div.checkoutcontainer div.input-email .input-text, div.checkoutcontainer div.input-telephone .input-text, div.checkoutcontainer div.input-company .input-text, div.checkoutcontainer div.input-fax .input-text, div.checkoutcontainer div.input-password .input-text{
+    width: 77%;
+}
+input[type=email], input[type=search], input[type=number], input[type=password], input[type=tel], input[type=text]{
+    height: 38px;
+}
+
+.delimetr {
+    height: 28px;
+    width: 840px;
+    border-bottom: 1px solid #dfdfdf;
+    margin-left: 60px;
+}
+.onestepcheckout-summary th{
+    border-top: none;
+}
+.onestepcheckout-totals td{
+    border: none;
+}
+table.onestepcheckout-totals td.title{
+    text-transform: uppercase;
+}
+
+table.onestepcheckout-totals tr.grand-total td{
+    color:#2b7cef;
+    font-weight: normal;
+    font-size: 1.4em;
+}
+table.onestepcheckout-totals tr.grand-total td.value{
+    color: #000;
+}
+
+
+.checkoutcontainer .payment-methods .card_type, .checkoutcontainer .payment-methods .cc_number{
+    width: 50% !important;
+    float: left;
+    margin-bottom: 6px;
+}
+
+
+
+.img_payment_system{
+    background: url(../images/paymentsystem.png) no-repeat top left;
+    height: 23px;
+    clear: both;
+}
+.cvv_number{
+    width: 44% !important;
+    float: left
+}
+
+.exp_date{
+    width: 56% !important;
+    float: left
+}
+.payment-methods .form-list{
+    background: none;
+    border: none;
+    width: 70%;
+}
+.payment-methods .form-list:before{
+    content: "";
+    display: none;
+}
+.payment-methods .form-list:after{
+    content: "";
+    display: none;
+}
+.payment-methods dt{
+    float: none;
+}
+
+.payment-methods .form-list, .payment-methods dd, .input-box .v-fix{
+    margin: 0px;
+    padding: 0px;
+}
+
+.cvv_n{
+    width: 45%;
+    float: left;
+    margin-left: 7%;
 }

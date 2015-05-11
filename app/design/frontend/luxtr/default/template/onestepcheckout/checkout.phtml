@@ -49,7 +49,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
 
 <div class="onestepcheckout-column-right">
 
-<p class="onestepcheckout-numbers onestepcheckout-numbers-4"><?php echo $this->__('Review your order'); ?></p>
+<!--<p class="onestepcheckout-numbers onestepcheckout-numbers-4">--><?php //echo $this->__('Review your order'); ?><!--</p>-->
 
 <div class="onestepcheckout-summary">
     <?php echo $this->getChildHtml('summary'); ?>
@@ -733,6 +733,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
 
         </ul>
     </div>
+    <div class="delimetr"></div>
     <div class="onestepcheckout-column-left">
         <div id="billing_address">
             <script type="text/javascript">
@@ -789,7 +790,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
             </ul>
         </div>
     <?php if($this->differentShippingAvailable()): ?>
-        <div id="shipping_address">
+        <div id="shipping_address" <?php  echo (($this->sameAsBilling() && !$uncheck) ? 'style="display: none"': false);?>>
             <script type="text/javascript">
                 var shipping = new Shipping();
             </script>
