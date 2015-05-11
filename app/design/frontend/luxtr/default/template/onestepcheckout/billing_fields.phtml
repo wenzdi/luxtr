@@ -5,7 +5,7 @@ $formErrors = (!empty($formErrors['billing_errors'])) ? $formErrors['billing_err
 $helper = Mage::helper('onestepcheckout/checkout');
 $dataHelper = Mage::helper('onestepcheckout');
 
-    $billingFields['firstname'] = '
+   /* $billingFields['firstname'] = '
         <div class="input-box input-firstname'.((in_array('firstname', $formErrors)) ? ' input-error' : '').'">
             <label for="billing:firstname">'.$this->__('First Name').'<span class="required"></span></label><br />
             <input class="required-entry input-text" type="text" name="billing[firstname]" id="billing:firstname" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getFirstname()).'" />
@@ -14,7 +14,7 @@ $dataHelper = Mage::helper('onestepcheckout');
         <div class="input-box input-lastname'.((in_array('lastname', $formErrors)) ? ' input-error' : '').'">
             <label for="billing:lastname">'.$this->__('Last Name').' <span class="required"></span></label><br />
             <input class="required-entry input-text" type="text" name="billing[lastname]" id="billing:lastname" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getLastname()).'" />
-        </div>';
+        </div>';*/
     ?>
 <?php if(!$this->isCustomerLoggedIn() || in_array('email_registered', $formErrors)): ?>
     <?php $billingFields['email'] = '
@@ -25,24 +25,24 @@ $dataHelper = Mage::helper('onestepcheckout');
         </div>';
     ?>
 <?php endif; ?>
-<?php if(!$this->isCustomerLoggedIn()): ?>
-    <?php $billingFields['email'] = $billingFields['email'].'
+<?php /*if(!$this->isCustomerLoggedIn()): */?><!--
+    <?php /*$billingFields['email'] = $billingFields['email'].'
         <div class="input-box input-email'.((in_array('email', $formErrors)) ? ' input-error' : '').'">
             <label for="billing:email">'.$this->__('Email Address').' <span class="required"></span></label><br />
             <input type="text" name="billing[email]" id="billing:email" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getEmail()).'" title="'.$this->__('Email Address') .'" class="validate-email required-entry input-text" />
         </div>';
-    ?>
-<?php endif; ?>
+    */?>
+<?php /*endif; */?>
 
 
-<?php if(!$this->settings['exclude_telephone']):?>
-    <?php $billingFields['telephone'] = '
+<?php /*if(!$this->settings['exclude_telephone']):*/?>
+    <?php /*$billingFields['telephone'] = '
         <div class="input-box input-telephone'.((in_array('telephone', $formErrors)) ? ' input-error' : '').'">
             <label for="billing:telephone">'.$this->__('Telephone').' <span class="required"></span></label><br/>
             <input type="text" name="billing[telephone]" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getTelephone()).'" title="'.$this->__('Telephone').'" class="required-entry input-text" id="billing:telephone" />
         </div>';
-    ?>
-<?php endif; ?>
+    */?>
+--><?php /*endif; */?>
 
 <?php if(!$this->settings['exclude_address']):?>
     <?php if(Mage::getStoreConfig('onestepcheckout/exclude_fields/enable_address_fields')):?>
@@ -216,7 +216,7 @@ $billingFields['country_id'] = '<label for="billing:country_id">'.$this->__('Cou
 <?php if($helper->showPasswords() && !$this->isCustomerLoggedIn()): ?>
     <?php
         //id="onestepcheckout-li-password"
-        $billingFields['password'] = '
+        /*$billingFields['password'] = '
         <li id="onestepcheckout-li-password" '.(($helper->hidePasswords()) ? 'style="display: none;"':'').'>
             <div class="input-box input-password'.((in_array('password', $formErrors)) ? ' input-error' : '').'">
                 <label for="billing:customer_password">'.$this->__('Password').'</label><br/>
@@ -226,7 +226,7 @@ $billingFields['country_id'] = '<label for="billing:country_id">'.$this->__('Cou
                 <label for="billing:confirm_password">'.$this->__('Confirm password').'</label><br/>
                 <input type="password" class="input-text required-entry validate-cpassword" value="'.((isset($_POST['billing']['confirm_password'])) ? Mage::helper('core')->escapeHtml($_POST['billing']['confirm_password']) : '').'" id="billing:confirm_password" title="Confirm Password" name="billing[confirm_password]"/>
             </div>
-        </li>';
+        </li>';*/
     ?>
 <?php endif; ?>
 

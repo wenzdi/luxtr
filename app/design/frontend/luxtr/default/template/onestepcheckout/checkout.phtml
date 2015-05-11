@@ -657,9 +657,82 @@ $helper = Mage::helper('onestepcheckout/checkout');
  */
 ?>
 
-
+<?php $dataHelper = Mage::helper('onestepcheckout'); ?>
 </div>
 <div class="checkout_border">
+    <div class="onestepcheckout-column-left">
+        <ul>
+            <li>
+                <p class="onestepcheckout-numbers onestepcheckout-numbers-1">Personal information</p>
+            </li>
+            <li>
+                <?php
+                $billingFields['firstname'] = '
+        <div class="input-box input-firstname">
+            <label for="billing:firstname">'.$this->__('First Name').'<span class="required"></span></label><br />
+            <input class="required-entry input-text" type="text" name="billing[firstname]" id="billing:firstname" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getFirstname()).'" />
+        </div>';
+                $billingFields['lastname'] = '
+        <div class="input-box input-lastname">
+            <label for="billing:lastname">'.$this->__('Last Name').' <span class="required"></span></label><br />
+            <input class="required-entry input-text" type="text" name="billing[lastname]" id="billing:lastname" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getLastname()).'" />
+        </div>';
+
+                echo $billingFields['firstname'];
+                echo $billingFields['lastname'];
+                ?>
+
+            </li>
+
+            <?php
+            $billingFields['password'] = '
+        <li id="onestepcheckout-li-password" '.(($helper->hidePasswords()) ? 'style="display: none;"':'').'>
+            <div class="input-box input-password'.((in_array('password', $formErrors)) ? ' input-error' : '').'">
+                <label for="billing:customer_password">'.$this->__('Password').'</label><br/>
+                <input type="password" class="input-text required-entry validate-password" value="'.((isset($_POST['billing']['customer_password'])) ? Mage::helper('core')->escapeHtml($_POST['billing']['customer_password']) : '').'" title="Password" id="billing:customer_password" name="billing[customer_password]"/>
+            </div>
+            <div class="input-box input-password'.((in_array('confirm_password', $formErrors)) ? ' input-error' : '').'">
+                <label for="billing:confirm_password">'.$this->__('Confirm password').'</label><br/>
+                <input type="password" class="input-text required-entry validate-cpassword" value="'.((isset($_POST['billing']['confirm_password'])) ? Mage::helper('core')->escapeHtml($_POST['billing']['confirm_password']) : '').'" id="billing:confirm_password" title="Confirm Password" name="billing[confirm_password]"/>
+            </div>
+        </li>';
+            echo $billingFields['password'];
+            ?>
+
+
+            <?php if(!$this->isCustomerLoggedIn()): ?>
+                <?php $billingFields['email'] = $billingFields['email'].'
+        <div class="input-box input-email'.((in_array('email', $formErrors)) ? ' input-error' : '').'">
+            <label for="billing:email">'.$this->__('Email Address').' <span class="required"></span></label><br />
+            <input type="text" name="billing[email]" id="billing:email" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getEmail()).'" title="'.$this->__('Email Address') .'" class="validate-email required-entry input-text" />
+        </div>';
+                ?>
+            <?php endif; ?>
+            <li>
+                <?php if(!$this->isCustomerLoggedIn()): ?>
+                    <?php $billingFields['email'] = '
+        <div class="input-box input-email">
+            <label for="billing:email">'.$this->__('Email Address').' <span class="required"></span></label><br />
+            <input type="text" name="billing[email]" id="billing:email" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getEmail()).'" title="'.$this->__('Email Address') .'" class="validate-email required-entry input-text" />
+        </div>';
+                    echo $billingFields['email'];
+                    ?>
+                <?php endif; ?>
+
+
+                <?php if(!$this->settings['exclude_telephone']):?>
+                    <?php $billingFields['telephone'] = '
+        <div class="input-box input-telephone">
+            <label for="billing:telephone">'.$this->__('Telephone').' <span class="required"></span></label><br/>
+            <input type="text" name="billing[telephone]" value="'.$dataHelper->clearDash($this->getQuote()->getBillingAddress()->getTelephone()).'" title="'.$this->__('Telephone').'" class="required-entry input-text" id="billing:telephone" />
+        </div>';
+                    echo $billingFields['telephone'];
+                    ?>
+                <?php endif; ?>
+            </li>
+
+        </ul>
+    </div>
     <div class="onestepcheckout-column-left">
         <div id="billing_address">
             <script type="text/javascript">

@@ -6,13 +6,13 @@ $helper = Mage::helper('onestepcheckout/checkout');
 $dataHelper = Mage::helper('onestepcheckout');
     $shippingFields['firstname'] = '
         <div class="input-box input-firstname'.((in_array('firstname', $formErrors)) ? ' input-error' : '').'">
-            <label for="shipping:firstname">'.$this->__('First Name').'<span class="required"></span></label><br />
-            <input class="required-entry input-text" type="text" name="shipping[firstname]" id="shipping:firstname" value="'.$dataHelper->clearDash($this->getQuote()->getShippingAddress()->getFirstname()).'" />
+
+            <input class=" input-text" type="hidden" name="shipping[firstname]" id="shipping:firstname" value="'.$dataHelper->clearDash($this->getQuote()->getShippingAddress()->getFirstname()).'" />
         </div>';
     $shippingFields['lastname'] = '
         <div class="input-box input-lastname'.((in_array('lastname', $formErrors)) ? ' input-error' : '').'">
-            <label for="shipping:lastname">'.$this->__('Last Name').' <span class="required"></span></label><br />
-            <input class="required-entry input-text" type="text" name="shipping[lastname]" id="shipping:lastname" value="'.$dataHelper->clearDash($this->getQuote()->getShippingAddress()->getLastname()).'" />
+
+            <input class=" input-text" type="hidden" name="shipping[lastname]" id="shipping:lastname" value="'.$dataHelper->clearDash($this->getQuote()->getShippingAddress()->getLastname()).'" />
         </div>';
     ?>
 
@@ -90,8 +90,8 @@ $shippingFields['country_id'] = '<label for="shipping:country_id">'.$this->__('C
 <?php if(!$this->settings['exclude_telephone']):?>
     <?php $shippingFields['telephone'] = '
         <div class="input-box input-telephone'.((in_array('telephone', $formErrors)) ? ' input-error' : '').'">
-            <label for="shipping:telephone">'.$this->__('Telephone').' <span class="required"></span></label><br/>
-            <input type="text" name="shipping[telephone]" value="'.$dataHelper->clearDash($this->getQuote()->getShippingAddress()->getTelephone()).'" title="'.$this->__('Telephone').'" class="required-entry input-text" id="shipping:telephone" />
+
+            <input type="hidden" name="shipping[telephone]" value="'.$dataHelper->clearDash($this->getQuote()->getShippingAddress()->getTelephone()).'" title="'.$this->__('Telephone').'" class=" input-text" id="shipping:telephone" />
         </div>';
     ?>
 <?php endif; ?>
