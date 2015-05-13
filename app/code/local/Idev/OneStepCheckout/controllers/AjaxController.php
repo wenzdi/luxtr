@@ -1,33 +1,131 @@
 <?php
 class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Action
 {
+    public function change_cartAction(){
+        $item_id = $this->getRequest()->getPost('id');
+        $quote =$this->_getOnepage()->getQuote();
+
+        $quote->removeItem($item_id);
+        $quote->collectTotals()
+            ->save();
+
+        $html = $this->getLayout()
+            ->createBlock('checkout/cart_totals')
+            ->setTemplate('checkout/cart/totals.phtml')
+            ->toHtml();
+        $this->getResponse()->setBody($html);
+    }
+
+    public function updatesAction() {
+        $quote =$this->_getOnepage()->getQuote();
+
+        $quote->collectTotals()
+            ->save();
+
+
+
+        $totals = $this->getLayout()
+            ->createBlock('onestepcheckout/summary')
+            ->setTemplate('onestepcheckout/customer/totals.phtml')
+            ->toHtml();
+
+        $summary = $this->getLayout()
+            ->createBlock('onestepcheckout/summary')
+            ->setTemplate('onestepcheckout/summary.phtml')
+            ->toHtml();
+        $cart = Mage::getSingleton('checkout/cart');
+        $cart->save();
+        $data = array(
+            'summary' => $summary,
+            'totals' => $totals
+        );
+
+        $this->loadLayout(false);
+        $this->renderLayout();
+
+        $html = Zend_Json::encode($data);
+
+        $this->getResponse()->setBody($summary);
+
+
+    }
+
+    public function change_qtyAction(){
+        $item_id = $this->getRequest()->getPost('product_id');
+
+        $item_qty= $this->getRequest()->getPost('update_value');
+
+        $quote =$this->_getOnepage()->getQuote();
+
+        $cartItems = Mage::helper('checkout/cart')->getCart()->getItems();
+        foreach ($cartItems as $item) {
+            if ($item->getId()==$item_id){
+
+                $item->setQty($item_qty);
+            }
+
+        }
+
+        $quote->collectTotals()
+            ->save();
+
+        $totals = $this->getLayout()
+            ->createBlock('onestepcheckout/summary')
+            ->setTemplate('onestepcheckout/customer/totals.phtml')
+            ->toHtml();
+
+        $summary = $this->getLayout()
+            ->createBlock('onestepcheckout/summary')
+            ->setTemplate('onestepcheckout/summary.phtml')
+            ->toHtml();
+        $cart = Mage::getSingleton('checkout/cart');
+        $cart->save();
+        $data = array(
+            'summary' => $summary,
+            'totals' => $totals
+        );
+
+        $this->loadLayout(false);
+        $this->renderLayout();
+
+        $this->getResponse()->setBody($summary);
+
+    }
+
+
     public function add_extra_productAction()
     {
         $helper = Mage::helper('onestepcheckout/extraproducts');
         $product_id = $this->getRequest()->getPost('product_id');
         $remove = $this->getRequest()->getPost('remove', false);
 
-        if($helper->isValidExtraProduct($product_id)) {
+        if(!$remove)    {
+            /* Add product to cart if it doesn't exist */
+            $product = Mage::getModel('catalog/product')->load($product_id);
+            $cart = Mage::getSingleton('checkout/cart');
+            $cart->addProduct($product);
+            $cart->save();
+        }
+        else    {
+            $items = Mage::helper('checkout/cart')->getCart()->getItems();
 
-            if(!$remove)    {
-                /* Add product to cart if it doesn't exist */
-                $product = Mage::getModel('catalog/product')->load($product_id);
-                $cart = Mage::getSingleton('checkout/cart');
-                $cart->addProduct($product);
-                $cart->save();
-            }
-            else    {
-                $items = Mage::helper('checkout/cart')->getCart()->getItems();
-                foreach($items as $item)    {
-                    if($item->getProduct()->getId() == $product_id) {
-                        Mage::helper('checkout/cart')->getCart()->removeItem($item->getId())->save();
-                    }
+            foreach($items as $item)    {
+
+                if($item->getProduct()->getId() == $product_id) {
+                    Mage::helper('checkout/cart')->getCart()->removeItem($item->getId())->save();
+
                 }
-
             }
         }
-        $this->loadLayout(false);
-        $this->renderLayout();
+
+        $carqty =  Mage::helper('checkout/cart')->getItemsCount();
+
+        if(!$carqty > 0) {
+            $this->getResponse()->setBody($carqty);
+        }else{
+            $this->loadLayout(false);
+            $this->renderLayout();
+        }
     }
 
     public function indexAction()
@@ -102,8 +200,8 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
 
             $quote->getShippingAddress()->setCollectShippingRates(true);
             $quote->setCouponCode(strlen($couponCode) ? $couponCode : '')
-            ->collectTotals()
-            ->save();
+                ->collectTotals()
+                ->save();
 
             if ($couponCode) {
                 if ($couponCode == $quote->getCouponCode()) {
@@ -137,16 +235,16 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
 
 
         $html = $this->getLayout()
-        ->createBlock('checkout/onepage_shipping_method_available')
-        ->setTemplate('onestepcheckout/shipping_method.phtml')
-        ->toHtml();
+            ->createBlock('checkout/onepage_shipping_method_available')
+            ->setTemplate('onestepcheckout/shipping_method.phtml')
+            ->toHtml();
 
         $response['shipping_method'] = $html;
 
 
         $html = $this->getLayout()
-        ->createBlock('checkout/onepage_payment_methods','choose-payment-method')
-        ->setTemplate('onestepcheckout/payment_method.phtml');
+            ->createBlock('checkout/onepage_payment_methods','choose-payment-method')
+            ->setTemplate('onestepcheckout/payment_method.phtml');
 
         if(Mage::helper('onestepcheckout')->isEnterprise() && Mage::helper('customer')->isLoggedIn()){
 
@@ -157,10 +255,10 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
             $rewardPointsBlockScripts = $this->getLayout()->createBlock('enterprise_reward/checkout_payment_additional', 'reward.scripts', array('template'=>'onestepcheckout/reward/payment/scripts.phtml', 'after' => '-'));
 
             $this->getLayout()->getBlock('choose-payment-method')
-            ->append($customerBalanceBlock)
-            ->append($customerBalanceBlockScripts)
-            ->append($rewardPointsBlock)
-            ->append($rewardPointsBlockScripts)
+                ->append($customerBalanceBlock)
+                ->append($customerBalanceBlockScripts)
+                ->append($rewardPointsBlock)
+                ->append($rewardPointsBlockScripts)
             ;
         }
 
@@ -171,11 +269,11 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
 
         $response['payment_method'] = $html->toHtml();
 
-          // Add updated totals HTML to the output
+        // Add updated totals HTML to the output
         $html = $this->getLayout()
-        ->createBlock('onestepcheckout/summary')
-        ->setTemplate('onestepcheckout/summary.phtml')
-        ->toHtml();
+            ->createBlock('onestepcheckout/summary')
+            ->setTemplate('onestepcheckout/summary.phtml')
+            ->toHtml();
 
         $response['summary'] = $html;
 
@@ -266,22 +364,22 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
 
         // Add updated totals HTML to the output
         $html = $this->getLayout()
-        ->createBlock('onestepcheckout/summary')
-        ->setTemplate('onestepcheckout/summary.phtml')
-        ->toHtml();
+            ->createBlock('onestepcheckout/summary')
+            ->setTemplate('onestepcheckout/summary.phtml')
+            ->toHtml();
 
         $response['summary'] = $html;
 
         $html = $this->getLayout()
-        ->createBlock('checkout/onepage_shipping_method_available')
-        ->setTemplate('onestepcheckout/shipping_method.phtml')
-        ->toHtml();
+            ->createBlock('checkout/onepage_shipping_method_available')
+            ->setTemplate('onestepcheckout/shipping_method.phtml')
+            ->toHtml();
 
         $response['shipping_method'] = $html;
 
         $html = $this->getLayout()
-        ->createBlock('checkout/onepage_payment_methods')
-        ->setTemplate('onestepcheckout/payment_method.phtml');
+            ->createBlock('checkout/onepage_payment_methods')
+            ->setTemplate('onestepcheckout/payment_method.phtml');
 
         if(Mage::helper('onestepcheckout')->isEnterprise()){
             $giftcardScripts = $this->getLayout()->createBlock('enterprise_giftcardaccount/checkout_onepage_payment_additional', 'giftcardaccount_scripts', array('template'=>'onestepcheckout/giftcardaccount/onepage/payment/scripts.phtml'));
@@ -330,8 +428,8 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
         else    {
 
             $customer = Mage::getModel('customer/customer')
-            ->setWebsiteId(Mage::app()->getStore()->getWebsiteId())
-            ->loadByEmail($email);
+                ->setWebsiteId(Mage::app()->getStore()->getWebsiteId())
+                ->loadByEmail($email);
 
             if ($customer->getId()) {
                 try {
@@ -372,7 +470,7 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
             }
         } else {
             $result['error'] = $this->__(
-            'Please enter a username and password.');
+                'Please enter a username and password.');
         }
 
         //session_id($sessionId);
@@ -408,7 +506,7 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
         }
 
         if(!empty($billing_data['use_for_shipping'])) {
-           $shipping_data = $billing_data;
+            $shipping_data = $billing_data;
         }
 
         // set customer tax/vat number for further usage
@@ -448,7 +546,7 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
         }
 
         if(!$paymentMethod && $selectedMethod && in_array($selectedMethod, $methods)){
-             $paymentMethod = $selectedMethod;
+            $paymentMethod = $selectedMethod;
         }
 
         if($this->_getOnepage()->getQuote()->isVirtual()) {
@@ -482,7 +580,7 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
         $shipping_method = $this->getRequest()->getPost('shipping_method', false);
 
         if(!empty($shipping_method)) {
-           $helper->saveShippingMethod($shipping_method);
+            $helper->saveShippingMethod($shipping_method);
         }
 
         if(!Mage::helper('customer')->isLoggedIn()){
@@ -500,10 +598,10 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
             $rewardPointsBlockScripts = $this->getLayout()->createBlock('enterprise_reward/checkout_payment_additional', 'reward.scripts', array('template'=>'onestepcheckout/reward/payment/scripts.phtml', 'after' => '-'));
 
             $this->getLayout()->getBlock('choose-payment-method')
-            ->append($customerBalanceBlock)
-            ->append($customerBalanceBlockScripts)
-            ->append($rewardPointsBlock)
-            ->append($rewardPointsBlockScripts)
+                ->append($customerBalanceBlock)
+                ->append($customerBalanceBlockScripts)
+                ->append($rewardPointsBlock)
+                ->append($rewardPointsBlockScripts)
             ;
 
         }
@@ -511,7 +609,7 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
         if(Mage::helper('onestepcheckout')->isEnterprise()){
             $giftcardScripts = $this->getLayout()->createBlock('enterprise_giftcardaccount/checkout_onepage_payment_additional', 'giftcardaccount_scripts', array('template'=>'onestepcheckout/giftcardaccount/onepage/payment/scripts.phtml'));
             $this->getLayout()->getBlock('choose-payment-method')
-            ->append($giftcardScripts);
+                ->append($giftcardScripts);
         }
 
         $this->renderLayout();
@@ -547,10 +645,10 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
             $rewardPointsBlockScripts = $this->getLayout()->createBlock('enterprise_reward/checkout_payment_additional', 'reward.scripts', array('template'=>'onestepcheckout/reward/payment/scripts.phtml', 'after' => '-'));
 
             $this->getLayout()->getBlock('choose-payment-method')
-            ->append($customerBalanceBlock)
-            ->append($customerBalanceBlockScripts)
-            ->append($rewardPointsBlock)
-            ->append($rewardPointsBlockScripts)
+                ->append($customerBalanceBlock)
+                ->append($customerBalanceBlockScripts)
+                ->append($rewardPointsBlock)
+                ->append($rewardPointsBlockScripts)
             ;
         }
 
@@ -582,7 +680,7 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
         }
 
         if(!$paymentMethod && $selectedMethod && in_array($selectedMethod, $methods)){
-             $paymentMethod = $selectedMethod;
+            $paymentMethod = $selectedMethod;
         }
 
         try {
@@ -610,17 +708,17 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
             $rewardPointsBlockScripts = $this->getLayout()->createBlock('enterprise_reward/checkout_payment_additional', 'reward.scripts', array('template'=>'onestepcheckout/reward/payment/scripts.phtml', 'after' => '-'));
 
             $this->getLayout()->getBlock('choose-payment-method')
-            ->append($customerBalanceBlock)
-            ->append($customerBalanceBlockScripts)
-            ->append($rewardPointsBlock)
-            ->append($rewardPointsBlockScripts)
+                ->append($customerBalanceBlock)
+                ->append($customerBalanceBlockScripts)
+                ->append($rewardPointsBlock)
+                ->append($rewardPointsBlockScripts)
             ;
         }
 
         if(Mage::helper('onestepcheckout')->isEnterprise()){
             $giftcardScripts = $this->getLayout()->createBlock('enterprise_giftcardaccount/checkout_onepage_payment_additional', 'giftcardaccount_scripts', array('template'=>'onestepcheckout/giftcardaccount/onepage/payment/scripts.phtml'));
             $this->getLayout()->getBlock('choose-payment-method')
-            ->append($giftcardScripts);
+                ->append($giftcardScripts);
         }
 
         $this->renderLayout();

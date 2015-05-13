@@ -55,9 +55,9 @@ $checkoutHelper = Mage::helper('onestepcheckout/checkout');
             <td class="qty">
 
                 <input value="<?php echo $item->getQty(); ?>" id="item_qty_<?php echo $item->getId() ?>" size="4" title="Qty" class="input-text qty" maxlength="12">
+                <button type="button" onclick="update_qty(<?php echo $item->getId() ?>)" name="update_item_qty_action" value="update_qty" title="Update Qty" class="btn-update-qty"><span><span>Update</span></span></button>
 
-
-
+                <span class="onestepcheckout-product-remove" onclick="product_remove(<?php echo $item->getId() ?>)">X</span>
 
 
             </td>
@@ -89,7 +89,6 @@ $checkoutHelper = Mage::helper('onestepcheckout/checkout');
             method: 'post',
             parameters: parameters,
             onSuccess: function(transport)  {
-                console.log(transport.responseText);
 
                 if(transport.responseText == 0) {
                     location.reload();
