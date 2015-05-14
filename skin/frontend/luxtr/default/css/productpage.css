@@ -9,6 +9,11 @@ textarea {
     font-size: 1em;
     line-height: 1.5;
 }
+th{
+    font-family: "Myriad Pro Light Semi Ext";
+    color: #6c6c6c;
+    font-size: 1.1em;
+}
 
 label{
     font-family: "Myriad Pro Light", Verdana, Arial, sans-serif;
@@ -1038,6 +1043,7 @@ div.onestepcheckout-threecolumns div.onestepcheckout-column-right{
     margin: 0 auto;
     border: 1px solid #d3d3d3;
     border-radius: 5px;
+    margin-bottom: 60px;
 }
 
 
@@ -1120,6 +1126,7 @@ div.checkoutcontainer .input-country, div.checkoutcontainer .input-region{
     background: #fff url("../images/icon_dropdown.png") no-repeat 98% 50%;
     width: 83%;
     margin-left: 0px;
+    height: 38px;
 }
 div.checkoutcontainer div.input-country select, div.checkoutcontainer div.input-region select{
     padding: 5px 8px;
@@ -1134,6 +1141,7 @@ div.checkoutcontainer div.input-country select, div.checkoutcontainer div.input-
     color: #91a193;
     font-family: Arial;
     font-size: 10px;
+    height: 38px;
 }
  .checkoutcontainer .payment-methods .input-box-type{
      border:0px;
@@ -1182,6 +1190,8 @@ li.type_p {
     font-family: Arial;
     font-size: 10px;
     width: 100% !important;
+    height: 38px;
+    margin-top: 0px;
 }
 label.required:after {
     content: "";
@@ -1288,4 +1298,66 @@ table.onestepcheckout-totals tr.grand-total td.value{
     width: 45%;
     float: left;
     margin-left: 7%;
+}
+
+.btn-update-qty_l{
+    background: #fff url(../images/btn_l.png) no-repeat;
+    width: 22px;
+    height: 29px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+
+.btn-update-qty_r{
+    background: #fff url(../images/btn_r.png) no-repeat;
+    width: 22px;
+    height: 29px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+.qty_inp{
+    height: 29px;
+    width: 39px;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    border-radius: 0px;
+    text-align: center;
+}
+table.onestepcheckout-summary td.qty, table.onestepcheckout-summary th.qty {
+    width: 12%;
+    text-align: center;
+}
+
+span.onestepcheckout-product-remove{
+    background: #fff url(../images/btn_del.png) no-repeat;
+    width: 10px;
+    height: 11px;
+    float: left;
+    margin-top: 8px;
+    margin-left: 3px;
+}
+
+table.onestepcheckout-summary td.name{
+    padding: 0 50px;
+}
+
+div.onestepcheckout-place-order-wrapper {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.onestepcheckout-summary th, .onestepcheckout-summary, .onestepcheckout-summary td, .onestepcheckout-totals td {
+    padding: 6px 0;
+}
+
+#onestepcheckout-form label {
+    margin-top: 6px;
+}
+li.exp_d{
+    clear: both;
 }
