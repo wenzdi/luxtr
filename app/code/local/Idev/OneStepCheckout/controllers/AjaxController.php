@@ -99,19 +99,23 @@ class Idev_OneStepCheckout_AjaxController extends Mage_Core_Controller_Front_Act
         $product_id = $this->getRequest()->getPost('product_id');
         $remove = $this->getRequest()->getPost('remove', false);
 
+
+
         if(!$remove)    {
             /* Add product to cart if it doesn't exist */
             $product = Mage::getModel('catalog/product')->load($product_id);
             $cart = Mage::getSingleton('checkout/cart');
             $cart->addProduct($product);
             $cart->save();
-        }
-        else    {
+        }else{
             $items = Mage::helper('checkout/cart')->getCart()->getItems();
 
-            foreach($items as $item)    {
 
+
+            foreach($items as $item)    {
+             
                 if($item->getProduct()->getId() == $product_id) {
+
                     Mage::helper('checkout/cart')->getCart()->removeItem($item->getId())->save();
 
                 }
