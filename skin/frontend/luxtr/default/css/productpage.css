@@ -3,7 +3,7 @@ button,
 input,
 select,
 table,
-textarea {
+textarea, .order-info-box .box-content {
     font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
     color: #636363;
     font-size: 1em;
@@ -680,7 +680,7 @@ td.val img{
 }
 
 .block.block-cart {
-    width: 205px;
+    width: 240px;
     float: right;
     margin-top: -45px;
 }
@@ -865,6 +865,7 @@ td.val img{
     width: 80%;
     text-align: left;
     margin-left: 10%;
+    margin-bottom: 10px;
 }
 .category-products .products-grid .price-box{
     width:50%;
@@ -1089,7 +1090,7 @@ div.checkoutcontainer{
 
 @media only screen and (min-width: 771px){
     .logo {
-        max-width: 190px;
+        max-width: 130px;
     }
 }
 
@@ -1360,4 +1361,33 @@ div.onestepcheckout-place-order-wrapper {
 }
 li.exp_d{
     clear: both;
+}
+
+.button, .cart-table .product-cart-actions .button, #co-shipping-method-form .buttons-set .button, .footer .button{
+    padding: 7px 30px;
+    line-height: 24px;
+}
+
+form#login-form, form#form-validate {
+    width: 1200px;
+    margin: 37px auto;
+}
+
+.customer-account-forgotpassword .fieldset, .customer-account-forgotpassword .buttons-set{
+    margin-left: 0px;
+}
+
+.customer-account .main {
+    width: 1200px;
+    margin: 30px auto;
+}
+
+.cart .buttons-set .button, .cart-table .button, .sidebar .actions .button, .button.button-secondary{
+    background-color: #e74c3c;
+    border-radius: 3px;
+    color: #fff;
+}
+
+#cart-sidebar-reorder p.product-name{
+    font-size: 1.1em;
 }
