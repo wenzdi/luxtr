@@ -896,15 +896,15 @@ td.val img{
     width: auto;
     margin: 0 auto;
 }
-.viplast:before{
-    border: 1px solid #aeaeae;
-    content: "";
-    position: absolute;
-    top: 10px;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-}
+/*.viplast:before{*/
+    /*border: 1px solid #aeaeae;*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*top: 10px;*/
+    /*bottom: 10px;*/
+    /*left: 10px;*/
+    /*right: 10px;*/
+/*}*/
 
 .choose_bottom_text {
     width: 35%;
@@ -1391,3 +1391,4 @@ form#login-form, form#form-validate {
 #cart-sidebar-reorder p.product-name{
     font-size: 1.1em;
 }
+

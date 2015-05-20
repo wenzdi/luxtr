@@ -186,13 +186,32 @@ $current_store_id = Mage::app()->getStore()->getId();
                 </p>
                 <p class="line3">Join our VIP Club and this will give you the opportunity to get free <br/>products and coupons deals on product releases from Luxtr!</p>
                 <div class="vip_club">
-                    <div class="input-box">
-                        <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter2" title="your email" placeholder="YOUR EMAIL" class="input-text required-entry validate-email" />
-                    </div>
-                    <div class="actions">
-                        <button type="submit" title="join our vip club" class="button"><span><span>join our vip club</span></span></button>
-                    </div>
+
+
+<!--                    <div class="input-box">-->
+<!--                        <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter2" title="your email" placeholder="YOUR EMAIL" class="input-text required-entry validate-email" />-->
+<!--                    </div>-->
+<!--                    <div class="actions">-->
+<!--                        <button type="submit" title="join our vip club" class="button"><span><span>join our vip club</span></span></button>-->
+<!--                    </div>-->
+                    <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+                        <div class="block-content">
+
+                            <div class="input-box">
+                                <input type="email" name="email" id="newsletter" title="your email" placeholder="YOUR EMAIL" class="input-text required-entry validate-email" />
+                            </div>
+                            <div class="actions">
+                                <button type="submit" title="join our vip club" class="button"><span><span>join our vip club</span></span></button>
+                            </div>
+                        </div>
+                    </form>
+                    <script type="text/javascript">
+                        //<![CDATA[
+                        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+                        //]]>
+                    </script>
                 </div>
+
             </div>
         </li>
     </ul>
