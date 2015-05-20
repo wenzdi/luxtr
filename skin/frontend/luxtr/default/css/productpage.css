@@ -1286,9 +1286,9 @@ table.onestepcheckout-totals tr.grand-total td.value{
     content: "";
     display: none;
 }
-.payment-methods dt{
-    float: none;
-}
+/*.payment-methods dt{*/
+    /*float: none;*/
+/*}*/
 
 .payment-methods .form-list, .payment-methods dd, .input-box .v-fix{
     margin: 0px;
