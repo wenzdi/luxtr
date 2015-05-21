@@ -1,3 +1,6 @@
+h1, h2, h3, h4, h5, h6{
+    font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
+}
 body,
 button,
 input,
@@ -386,6 +389,15 @@ body.cms-home .main-container {
     padding-top: 0px;
 }
 
+.main {
+    width: 1200px;
+    margin: 30px auto;
+}
+body.cms-home .main, .catalog-category-view .main {
+    width: 100%;
+    margin: 0px;
+}
+
 .home_block1 {
     background-color: #f8f8f8;
     overflow: auto;
@@ -709,11 +721,6 @@ td.val img{
 .block-cart p.subtotal {
     margin-top: 10px;
 }
-.is-blog .main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 20px;
-}
 .post-entry p {
     width: 78%;
     margin-left: 22%;
@@ -877,6 +884,7 @@ td.val img{
     padding: 0px;
     position: inherit;
     min-height: 40px;
+    margin-bottom: 20px;
 }
 .products-grid .vip_club .actions {
     width: 100%;
@@ -1377,10 +1385,7 @@ form#login-form, form#form-validate {
     margin-left: 0px;
 }
 
-.customer-account .main {
-    width: 1200px;
-    margin: 30px auto;
-}
+
 
 .cart .buttons-set .button, .cart-table .button, .sidebar .actions .button, .button.button-secondary{
     background-color: #e74c3c;
@@ -1392,3 +1397,12 @@ form#login-form, form#form-validate {
     font-size: 1.1em;
 }
 
+#contactForm{
+    padding-left: 0px;
+}
+
+.cms-page-view .std h1, .cms-no-route .std h1 {
+    font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
+    color: #636363;
+
+}
