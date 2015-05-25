@@ -780,7 +780,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
                     <?php $uncheck = (!empty($_POST['billing']) && empty($_POST['billing']['use_for_shipping']));?>
                     <?php if($this->differentShippingAvailable()): ?>
                         <div class="input-box input-different-shipping">
-                            <input type="checkbox" name="billing[use_for_shipping]" id="billing:use_for_shipping_yes" value="1" <?php echo (($this->sameAsBilling() && !$uncheck) ? 'checked="checked" ':'')?>/>
+                            <input onchange="copy23()"  type="checkbox" name="billing[use_for_shipping]" id="billing:use_for_shipping_yes" value="1" <?php echo (($this->sameAsBilling() && !$uncheck) ? 'checked="checked" ':'')?>/>
                             <label for="billing:use_for_shipping_yes"><?php echo $this->__('Ship to the same address')?></label>
                         </div>
                     <?php else: ?>
@@ -790,7 +790,8 @@ $helper = Mage::helper('onestepcheckout/checkout');
             </ul>
         </div>
     <?php if($this->differentShippingAvailable()): ?>
-        <div id="shipping_address" <?php  echo (($this->sameAsBilling() && !$uncheck) ? 'style="display: none"': false);?>>
+        <div id="shipping_address" >
+<!--            --><?php // echo (($this->sameAsBilling() && !$uncheck) ? 'style="display: none"': false);?><!-->
             <script type="text/javascript">
                 var shipping = new Shipping();
             </script>

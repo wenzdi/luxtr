@@ -133,3 +133,42 @@ $shippingFields['country_id'] = '<label for="shipping:country_id">'.$this->__('C
         <li class="clearfix"><?php echo implode('',$value['fields']);?></li>
     <?php endif;?>
 <?php endforeach;?>
+
+<script type="text/javascript">
+
+    (function () {
+        var box0 = $('billing:street1'),
+            box1 = $('shipping:street1'),
+            box3 = $('billing:street2'),
+            box4 = $('shipping:street2'),
+            box5 = $('billing:city'),
+            box6 = $('shipping:city'),
+            box7 = $('billing:postcode'),
+            box8 = $('shipping:postcode');
+
+
+        box0.on('keyup', function () {
+            box1.value = $F(this);
+        });
+        box3.on('keyup', function () {
+            box4.value = $F(this);
+        });
+        box5.on('keyup', function () {
+            box6.value = $F(this);
+        });
+
+        box7.on('keyup', function () {
+            box8.value = $F(this);
+        });
+    })();
+
+</script>
+<script type="text/javascript">
+    function copy22(tt) { $('shipping:region_id').value = tt.value;}
+</script>
+
+<!--<script type="text/javascript">-->
+<!--    function copy23() {-->
+<!--        if ($("billing:use_for_shipping_yes").value == 1){ alert('fsdfcvsj');}-->
+<!--    }-->
+<!--</script>-->

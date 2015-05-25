@@ -393,7 +393,7 @@ body.cms-home .main-container {
     width: 1200px;
     margin: 30px auto;
 }
-body.cms-home .main, .catalog-category-view .main {
+body.cms-home .main, .catalog-category-view .main,  .onestepcheckout-index-index .main {
     width: 100%;
     margin: 0px;
 }
@@ -764,7 +764,7 @@ td.val img{
         width: 48%;
         margin-right: 3.7037%;
         background-color: #f8f8f8;
-        min-height: 819px;
+        min-height: 838px;
     }
     .products-grid > li:nth-child(even) {
         margin-right: 0px;
