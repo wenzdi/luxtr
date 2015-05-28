@@ -47,11 +47,10 @@
             <li class="level0 nav-1 first "><a href="/blog" class="level0 ">Blog</a></li>
             <li class="level0 nav-1 first "><a href="/contacts" class="level0 ">Contact Us</a></li>
             <?php if(!Mage::getSingleton("customer/session")->isLoggedIn()) { ?>
-                <li class="level0 nav-1 first "><a href="<?php echo Mage::getUrl('customer/account/login/') ?>" class="level0 "><?php echo $this->__('Sign In'); ?></a></li>
+                <li class="level0 nav-1 first signin"><a href="<?php echo Mage::getUrl('customer/account/login/') ?>" class="level0 "><?php echo $this->__('Sign In'); ?></a></li>
             <?php }else{ ?>
                 <li class="level0 nav-1 first "><a href="<?php echo Mage::getUrl('customer/account') ?>" class="level0 "><?php echo $this->__('My Account '); ?></a></li>
-                |
-                <li class="level0 nav-1 first "><a href="<?php echo Mage::getUrl('customer/account/logout/') ?>" class="level0 "><?php echo $this->__('Logout '); ?></a></li>
+                <li class="level0 nav-1 first logout"><a href="<?php echo Mage::getUrl('customer/account/logout/') ?>" class="level0 "><?php echo $this->__('Logout '); ?></a></li>
             <?php } ?>
         </ol>
     </nav>

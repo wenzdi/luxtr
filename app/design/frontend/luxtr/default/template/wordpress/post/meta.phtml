@@ -12,8 +12,9 @@
 <?php if ($this->hasTags($post)): ?>
 	<?php echo stripslashes($this->__('This entry was posted in %s and tagged %s on %s<span class=\"by-author\"> by %s</span>.', $this->getCategoryString($post), $this->getTagString($post), $post->getPostDate(), $post->getAuthor()->getDisplayName())) ?>
 <?php else: ?>
-	<?php echo stripslashes($this->__('This entry was posted in %s on %s<span class=\"by-author\"> by %s</span>.', $this->getCategoryString($post), $post->getPostDate(), $post->getAuthor()->getDisplayName())) ?>
+	<?php echo stripslashes($this->__('<span class=\"by-author\"> by %s</span> on <span class=\"by-date\">%s</span>.',  $post->getAuthor()->getDisplayName(), $post->getPostDate() )) ?>
 <?php endif; ?>
+    &middot;<a class="leavecomment" href="<?php echo $post->getPermalink() ?>" title="Leave a comment">Leave a comment</a>
 <?php if ($this->canDisplayPreviousNextLinks()): ?>
 <span class="post-skips">
 	<?php if (($previous = $post->getPreviousPost()) !== false): ?>
