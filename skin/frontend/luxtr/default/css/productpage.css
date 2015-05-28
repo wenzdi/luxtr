@@ -777,7 +777,7 @@ p.post-meta{
     }
 }
 
-.choose, .title_checkout{
+.choose, .title_checkout, .title_blog{
     font-family: "Myriad Pro Light Semi Ext";
     color:#848484;
     background-color: #f8f8f8;
@@ -1455,4 +1455,12 @@ li.level0.nav-1.first.signin:before, li.level0.nav-1.first.logout:before {
 }
 .post-date{
     font-style: normal;
+}
+.cms-no-route .main {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.is-blog .title_blog{
+    display: block !important;
 }
