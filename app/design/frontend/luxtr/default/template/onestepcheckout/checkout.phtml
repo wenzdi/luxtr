@@ -22,8 +22,8 @@ $helper = Mage::helper('onestepcheckout/checkout');
 <fieldset class="group-select" style="margin: 0;">
 
 <?php if($this->settings['checkout_title']): ?>
-    <div class="title_checkout">
-        <div class="title_checkout_entry">
+    <div class="block_title">
+        <div class="block_title_entry">
             <h1 class="onestepcheckout-title"><?php echo $this->settings['checkout_title']; ?></h1>
         </div>
     </div>
@@ -780,7 +780,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
                     <?php $uncheck = (!empty($_POST['billing']) && empty($_POST['billing']['use_for_shipping']));?>
                     <?php if($this->differentShippingAvailable()): ?>
                         <div class="input-box input-different-shipping">
-                            <input onchange="copy23()"  type="checkbox" name="billing[use_for_shipping]" id="billing:use_for_shipping_yes" value="1" <?php echo (($this->sameAsBilling() && !$uncheck) ? 'checked="checked" ':'')?>/>
+                            <input type="checkbox" name="billing[use_for_shipping]" id="billing:use_for_shipping_yes" value="1" <?php echo (($this->sameAsBilling() && !$uncheck) ? 'checked="checked" ':'')?>/>
                             <label for="billing:use_for_shipping_yes"><?php echo $this->__('Ship to the same address')?></label>
                         </div>
                     <?php else: ?>
@@ -827,7 +827,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
 
     <div class="onestepcheckout-column-middle">
 
-
+        <div class="delimetr2"></div>
         <?php if(!$this->isVirtual()): ?>
             <?php if(Mage::getStoreConfig('onestepcheckout/general/hide_shipping_method')):?>
                 <?php if(isset($this->formErrors['shipping_method']) && $this->formErrors['shipping_method']): ?>
@@ -852,7 +852,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
                 </div>
             <?php endif; ?>
         <?php endif; ?>
-
+        <div class="delimetr2"></div>
         <?php if(Mage::getStoreConfig('onestepcheckout/general/hide_payment_method')):?>
             <?php if(!empty($this->formErrors['payment_method'])): ?>
             <div class="onestepcheckout-error onestepcheckout-payment-method-error">

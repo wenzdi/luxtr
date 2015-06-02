@@ -32,6 +32,12 @@ label{
     src: local('Myriad Pro Regular'), url('../fonts/MYRIADPRO-REGULAR.woff') format('woff');
 }
 @font-face {
+    font-family: 'Myriad Pro Semi Ext';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Myriad Pro Semi Ext'), url('../fonts/myriadprosemiext.woff') format('woff');
+}
+@font-face {
     font-family: 'Myriad Pro Italic';
     font-style: normal;
     font-weight: normal;
@@ -135,6 +141,12 @@ label{
 
 .product-view .product-shop {
     width: 40%;
+    margin-bottom: 20px;
+}
+
+
+.product-view .price-info .price-box{
+    margin: 0px;
 }
 .product-view .add-to-cart-wrapper {
     width: 40%;
@@ -177,6 +189,7 @@ label{
     padding-bottom: 2px;
     padding-left: 10px;
     font-family: "Myriad Pro Light";
+    min-height:65px;
 }
 .compatible, .compatible_value{
     padding-left: 10px;
@@ -389,11 +402,12 @@ body.cms-home .main-container {
     padding-top: 0px;
 }
 
-.main {
+.main, .cms_content, form#contactForm {
     width: 1200px;
     margin: 30px auto;
 }
-body.cms-home .main, .catalog-category-view .main,  .onestepcheckout-index-index .main {
+body.cms-home .main, .catalog-category-view .main,  .onestepcheckout-index-index .main, .cms-page-view .main,
+.contacts-index-index .main{
     width: 100%;
     margin: 0px;
 }
@@ -429,6 +443,7 @@ body.cms-home .main, .catalog-category-view .main,  .onestepcheckout-index-index
     font-size: 3.4em;
     color: #2b2b2b;
     margin: 0px;
+    text-transform: none;
 }
 .home1_text .line3{
     font-family: "Myriad Pro Light";
@@ -534,6 +549,7 @@ td.val img{
     font-family: "Myriad Pro Light";
     font-style: italic;
     float: left;
+    margin: 10px 0px;
 }
 .amazon_head{
     text-align: right;
@@ -579,6 +595,7 @@ td.val img{
     font-family: "Myriad Pro Regular";
     font-size: 3.2em;
     color: #2b7cef;
+    margin-top: 20px;
 }
 .home_block5 .home5_text .line2{
     font-family: "Myriad Pro Light";
@@ -680,15 +697,16 @@ td.val img{
     margin: 0 auto;
 }
 
-.new_home  .products-grid .actions{
-    width: 10%;
-    float: left;
+.new_home .products-grid .actions{
+    width: 30%;
+    float: right;
     position: relative;
 }
 .new_home .price-box{
-    width: 20%;
+    width: 17%;
     float: left;
-    margin-top:15px;
+    margin-top:7px;
+    text-align: left;
 }
 
 .block.block-cart {
@@ -770,36 +788,60 @@ p.post-meta{
         width: 48%;
         margin-right: 3.7037%;
         background-color: #f8f8f8;
-        min-height: 838px;
+        min-height: 848px;
     }
     .products-grid > li:nth-child(even) {
         margin-right: 0px;
     }
 }
-
-.choose, .title_checkout, .title_blog{
+.block_title{
     font-family: "Myriad Pro Light Semi Ext";
     color:#848484;
     background-color: #f8f8f8;
 }
-.choose_entry, .title_checkout_entry{
+.block_title_entry{
     width: 1200px;
     margin: 0 auto;
     padding: 20px 0px;
 }
-.title_checkout_entry h1{
-    font-family: "Myriad Pro Light Semi Ext";
-    color:#848484;
+.block_title_entry h1, .std .block_title_entry h1{
     font-size: 2em;
     text-transform: none;
+
+    text-transform: uppercase; color:#848484;
+    font-family: "Myriad Pro Light Semi Ext";
+    margin-top: 30px;
 }
-.choose .line1{
-    font-size: 3em;
-    text-transform: uppercase;
-}
-.choose .line2{
+.block_title_entry p.line2, .std .block_title_entry p.line2{
     font-size: 1.2em;
+    margin-bottom: 20px;
+    color:#848484;
+    font-family: "Myriad Pro Light Semi Ext";
+    font-style: normal;
 }
+/*.choose, .title_checkout, .title_blog, .about{*/
+    /*font-family: "Myriad Pro Light Semi Ext";*/
+    /*color:#848484;*/
+    /*background-color: #f8f8f8;*/
+/*}*/
+/*.choose_entry, .title_checkout_entry, .about_entry{*/
+    /*width: 1200px;*/
+    /*margin: 0 auto;*/
+    /*padding: 20px 0px;*/
+/*}*/
+/*.title_checkout_entry h1, .about_entry h1{*/
+    /*font-family: "Myriad Pro Light Semi Ext";*/
+    /*color:#848484;*/
+    /*font-size: 2em;*/
+    /*text-transform: none;*/
+/*}*/
+/*.choose .line1{*/
+    /*font-size: 3em;*/
+    /*text-transform: uppercase;*/
+/*}*/
+/*.choose .line2{*/
+    /*font-size: 1.2em;*/
+/*}*/
 .lastitem{
     text-align: center;
 }
@@ -830,7 +872,7 @@ p.post-meta{
 .vip_club input[type=email] {
     height: 60px;
 }
-.vip_club button.button {
+.products-grid .vip_club button.button {
     height: 60px;
     width: 365px;
     font-family: "Myriad Pro Semibold";
@@ -881,12 +923,13 @@ p.post-meta{
     margin-bottom: 10px;
 }
 .category-products .products-grid .price-box{
-    width:50%;
     float:left;
+    margin-left: 10%;
 }
 .category-products .products-grid .actions {
     width:50%;
     float:left;
+    margin-left: 10%;
     padding: 0px;
     position: inherit;
     min-height: 40px;
@@ -1003,7 +1046,7 @@ p.warranty_text{
 
 .learnmore{
     background-color: #b1b1b1 !important;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
 }
 .upcoming .products-grid .product-name{
     font-family: "Myriad Pro Regular";
@@ -1245,6 +1288,11 @@ input[type=email], input[type=search], input[type=number], input[type=password],
     border-bottom: 1px solid #dfdfdf;
     margin-left: 60px;
 }
+.delimetr2 {
+    height: 28px;
+    width: 840px;
+    border-bottom: 1px solid #dfdfdf;
+}
 .onestepcheckout-summary th{
     border-top: none;
 }
@@ -1407,10 +1455,23 @@ form#login-form, form#form-validate {
     padding-left: 0px;
 }
 
-.cms-page-view .std h1, .cms-no-route .std h1 {
-    font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;
-    color: #636363;
+/*.cms-page-view .std h1, .cms-no-route .std h1 {*/
+    /*font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;*/
+    /*color: #636363;*/
 
+/*}*/
+
+/*.cms-page-view .std p.line2, .cms-no-route .std p.line2{*/
+    /*font-family: "Myriad Pro Light Semi Ext";*/
+    /*color:#848484;*/
+    /*background-color: #f8f8f8;*/
+    /*margin: 0px;*/
+    /*text-transform: none;*/
+    /*font-style: normal;*/
+    /*line-height: 1;*/
+/*}*/
+.std>p{
+    margin: 0px;
 }
 
 a.read-more {
@@ -1463,4 +1524,181 @@ li.level0.nav-1.first.signin:before, li.level0.nav-1.first.logout:before {
 
 .is-blog .title_blog{
     display: block !important;
+}
+
+
+.blog-search input.input-text{
+    margin: 0;
+    padding: 6px 15px;
+    font-family: "Myriad Pro Regular"
+    font-size:1em;
+    color:#b5afbe;
+    border:1px solid #dddddd; border-right:0px;
+    max-width: 85%;
+    height: 38px;
+    float: left;
+    background-color: #f7f7f7;
+    border-radius: 0;
+}
+
+.blog-search button.button{
+    margin: 0;
+    padding: 0;
+    width:38px;
+    height:38px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0;
+    border:1px solid #dddddd; border-left:0px;
+    background: #f7f7f7 url('../images/luxtr_blog_search.png') no-repeat center;
+    text-indent: -999px;
+}
+
+#wp-archive-list a {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#wrap{
+    display: none;
+    opacity: 0.8;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 16px;
+    background-color: rgba(1, 1, 1, 0.725);
+    z-index: 100;
+    overflow: auto;
+}
+.popup_inner{
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #f8f8f8;
+    padding: 30px;
+
+}
+
+div#other_device {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 102;
+}
+
+input#mc-embedded-subscribe {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+input#mce-EMAIL {
+    margin-top: 20px;
+}
+
+.indicates-required {
+    margin-top: 15px;
+}
+
+.products-grid .actions .button, .home1_text .btn-cart{
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 50px;
+    min-width: 160px;
+}
+
+
+.button, .cart-table .product-cart-actions .button, #co-shipping-method-form .buttons-set .button, .footer .button{
+    font-size: 1em;
+}
+.price-box .special-price{
+    padding-left: 0px;
+}
+#header-nav .button{
+    padding: 7px 20px;
+}
+
+.buttons-set button.button{
+    float: left;
+    margin: 0px;
+}
+.contacts-index-index .buttons-set{
+    margin: 0px;
+    border: none;
+}
+.product-view .product-shop .short-description{
+    margin-bottom: 20px;
+}
+#block-related form {
+    margin-top: 10px;
+}
+
+.block-title{
+    margin-bottom: 25px;margin-top: 25px;padding-top: 25px;
+}
+
+a.text-m.write-review-btn-hidden{
+    font-family: "Myriad Pro Regular";
+    padding-left: 5px;
+    color: #848484 !important;
+}
+
+.shipment-methods dd {
+    width: 100px;
+    float: left;
+    padding-top: 5px;
+}
+
+div.onestepcheckout-shipping-method, p.onestepcheckout-numbers-3 {
+    margin-top: 35px;
+}
+
+.onestepcheckout-button, .onestepcheckout-button:visited, .medium.onestepcheckout-button, .medium.onestepcheckout-button:visited{
+    text-shadow: none;
+    font-size: 1.3em;
+    font-style: normal;
+    font-weight: normal;
+}
+.large.onestepcheckout-button, .large.onestepcheckout-button:visited{
+    text-shadow: none;
+    font-size: 1.3em;
+    font-style: normal;
+    font-weight: normal;
+}
+/*.cms-reviews .std img{*/
+    /*border: 2px solid gray;*/
+    /*margin: 10px;*/
+    /*border-radius: 10px;*/
+/*}*/
+.block-title h2, .block-title h3, .block-title strong{
+    font-family: "Myriad Pro Semi Ext";
+    color: #4a4b46;
+    font-size: 1.1em;
+}
+
+.block-title {
+    border-bottom: 1px solid #d3d3d3;
+    border-top: none;
+    padding-bottom: 10px;
+}
+.block-content li.item a span {
+    text-transform: uppercase;
+}
+
+.block-content li.item{
+    margin-left: 0px;
+}
+.blog-search {
+    padding: 0px;
+    margin-top: 50px;
+}
+
+.is-blog .col-main {
+    margin-top: 50px;
 }

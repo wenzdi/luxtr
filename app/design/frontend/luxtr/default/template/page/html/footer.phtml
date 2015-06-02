@@ -43,3 +43,45 @@
         </ul>
     </div>
 </div>
+<?php echo $this->getChildHtml('other_device');  ?>
+<div id="wrap" onclick="openbox('other_device'); return false">&nbsp;</div>
+<div id="other_device" class="popup" style="display: none;">
+    <div class="popup_inner">
+        <p>Sorry we are out of stock. Fill out the form below to be notified ASAP!</p>
+        <div class="modal-body"><!-- Begin MailChimp Signup Form --><p></p>
+            <div id="mc_embed_signup">
+                <form id="mc-embedded-subscribe-form" class="validate" action="//Luxtr.us9.list-manage.com/subscribe/post?u=8a93aeef8dda08ea987c11cee&amp;id=9e9ca65268" method="post" name="mc-embedded-subscribe-form" novalidate="novalidate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+                        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                        <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span><br>
+                            </label><br>
+                            <input id="mce-EMAIL" class="required email" name="EMAIL" type="email" value="" aria-required="true"></div>
+                        <div id="mce-responses" class="clear"></div>
+                        <p><!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--></p>
+                        <div style="position: absolute; left: -5000px;"><input tabindex="-1" name="b_8a93aeef8dda08ea987c11cee_9e9ca65268" type="text" value=""></div>
+                        <div class="clear"><input id="mc-embedded-subscribe" class="button" name="subscribe" type="submit" value="Subscribe"></div>
+                    </div>
+                </form>
+                <a href="#" class="button" onclick="openbox('other_device'); return false"><span><span>Close</span></span></a>
+            </div>
+            <p><script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" type="text/javascript"></script><script type="text/javascript">// <![CDATA[
+                    (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+                    // ]]&gt;</script><br>
+                <!--End mc_embed_signup--></p></div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    function openbox(id){
+        display = document.getElementById(id).style.display;
+        scroll(0,0);
+
+        if(display=='none'){
+            document.getElementById(id).style.display='block';
+            document.getElementById('wrap').style.display='block';
+        }else{
+            document.getElementById(id).style.display='none';
+            document.getElementById('wrap').style.display='none';
+        }
+    }
+</script>

@@ -7,11 +7,6 @@
  */
 ?>
 <div class="block block-blog block-blog-search">
-	<?php if ($title = $this->getTitle()): ?>
-		<div class="block-title">
-			<strong><span><?php echo $this->__($title) ?></span></strong>
-		</div>
-	<?php endif; ?>
 	<div class="block-content">
 		<form method="get" action="<?php echo $this->getFormActionUrl() ?>" id="blog-search-form">
 			<div class="blog-search">
