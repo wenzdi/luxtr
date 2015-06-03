@@ -683,7 +683,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
                 ?>
 
             </li>
-
+            <?php if(!$this->isCustomerLoggedIn()): ?>
             <?php
             $billingFields['password'] = '
         <li id="onestepcheckout-li-password" '.(($helper->hidePasswords()) ? 'style="display: none;"':'').'>
@@ -698,7 +698,7 @@ $helper = Mage::helper('onestepcheckout/checkout');
         </li>';
             echo $billingFields['password'];
             ?>
-
+            <?php endif; ?>
 
             <?php if(!$this->isCustomerLoggedIn()): ?>
                 <?php $billingFields['email'] = $billingFields['email'].'
@@ -1193,7 +1193,7 @@ Event.observe(window, 'load', function() {
     $('billing:use_for_shipping_yes').observe('click', function(e)  {
         var element = e.element();
         if(element.checked){
-            $('shipping_address').hide();
+//            $('shipping_address').hide();
         } else {
             if($('shipping-address-select') && $('shipping-address-select').value == ''){
                 $('shipping_address_list').show()

@@ -618,14 +618,14 @@ td.val img{
     color: #575757;
     font-size: 1.5em;
     font-family: "Myriad Pro Regular";
-    padding-top: 40px;
-    padding-left: 80px;
+    padding-top: 2em;
+    padding-left: 4em;
 }
 .block-subscribe .block-title .line2{
     color: #838383;
     font-size: 1em;
     font-family: "Myriad Pro Light";
-    padding-left: 80px;
+    padding-left: 6em;
 }
 .footer .block-subscribe .input-box{
     padding-left: 80px;

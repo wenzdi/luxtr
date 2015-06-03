@@ -144,26 +144,41 @@ $shippingFields['country_id'] = '<label for="shipping:country_id">'.$this->__('C
             box5 = $('billing:city'),
             box6 = $('shipping:city'),
             box7 = $('billing:postcode'),
-            box8 = $('shipping:postcode');
+            box8 = $('shipping:postcode'),
+            check1 = $('billing:use_for_shipping_yes');
+
 
 
         box0.on('keyup', function () {
-            box1.value = $F(this);
+            if(check1.checked) {
+                box1.value = $F(this);
+            }
         });
         box3.on('keyup', function () {
-            box4.value = $F(this);
+            if(check1.checked) {
+                box4.value = $F(this);
+            }
         });
         box5.on('keyup', function () {
-            box6.value = $F(this);
+            if(check1.checked) {
+                box6.value = $F(this);
+            }
         });
 
         box7.on('keyup', function () {
-            box8.value = $F(this);
+            if(check1.checked) {
+                box8.value = $F(this);
+            }
         });
     })();
 
 </script>
 <script type="text/javascript">
-    function copy22(tt) { $('shipping:region_id').value = tt.value;}
+    function copy22(tt) {
+        var check1 = $('billing:use_for_shipping_yes');
+            if(check1.checked) {
+                $('shipping:region_id').value = tt.value;
+            }
+        }
 </script>
 
