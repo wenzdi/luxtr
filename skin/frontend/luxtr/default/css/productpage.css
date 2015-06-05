@@ -1339,7 +1339,7 @@ table.onestepcheckout-totals tr.grand-total td.value{
 .payment-methods .form-list{
     background: none;
     border: none;
-    width: 70%;
+    width: 100%;
 }
 .payment-methods .form-list:before{
     content: "";
@@ -1712,4 +1712,25 @@ div.onestepcheckout-shipping-method, p.onestepcheckout-numbers-3 {
 }
 .home3_img img {
     width: 1000px;
+}
+
+.customer-account-create .fieldset, .customer-account-create .buttons-set{
+    margin-left: 0px;
+}
+
+.customer-account-create .buttons-set {
+    max-width: 365px;
+}
+
+.customer-account-create .buttons-set button.button, .customer-account-forgotpassword .buttons-set button.button{
+    float: right;
+ }
+
+.form-list .control label{
+    background: none;
+}
+
+dl#checkout-payment-method-load>div:nth-child(1) {
+    width: 65%;
+    float: left;
 }

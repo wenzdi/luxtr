@@ -1739,3 +1739,19 @@ div.onestepcheckout-shipping-method, p.onestepcheckout-numbers-3 {
 .cms-warranty iframe {
     width: 100% !important;
 }
+
+.customer-account-create .fieldset, .customer-account-create .buttons-set{
+    margin-left: 0px;
+}
+.customer-account-create .buttons-set {
+    max-width: 365px;
+}
+
+.customer-account-create .buttons-set .customer-account-create .buttons-set {
+    float: right;
+}
+
+
+.form-list .control label{
+    background: none;
+}
