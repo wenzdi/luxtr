@@ -595,7 +595,9 @@ $helper = Mage::helper('onestepcheckout/checkout');
 
     </div>
 <?php endif; ?>
-
+<div class="onestepcheckout-feedback" style="float:right; padding: 10px 0 20px 0">
+<?php echo $this->getChildHtml('checkout.cart.methods.paypal_express.bottom');  ?>
+    </div>
 <?php
 /**
  * Default magento agreements
