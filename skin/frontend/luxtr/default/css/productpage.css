@@ -1499,6 +1499,9 @@ span.by-date {
     border-bottom: 1px solid #d3d3d3;
     padding-top: 40px;
 }
+.post-list li.item:nth-child(1) {
+    padding-top: 0px;
+}
 li.item.last.odd {
     border: none;
 }
