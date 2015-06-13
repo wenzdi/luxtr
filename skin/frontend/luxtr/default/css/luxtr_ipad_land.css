@@ -560,8 +560,8 @@ td.val img{
 
 }
 .amazon_head .line1{
-     display: block;
- }
+    display: block;
+}
 .amazon_head img{
     float: right;
 }
@@ -821,27 +821,27 @@ p.post-meta{
     font-style: normal;
 }
 /*.choose, .title_checkout, .title_blog, .about{*/
-    /*font-family: "Myriad Pro Light Semi Ext";*/
-    /*color:#848484;*/
-    /*background-color: #f8f8f8;*/
+/*font-family: "Myriad Pro Light Semi Ext";*/
+/*color:#848484;*/
+/*background-color: #f8f8f8;*/
 /*}*/
 /*.choose_entry, .title_checkout_entry, .about_entry{*/
-    /*width: 1200px;*/
-    /*margin: 0 auto;*/
-    /*padding: 20px 0px;*/
+/*width: 1200px;*/
+/*margin: 0 auto;*/
+/*padding: 20px 0px;*/
 /*}*/
 /*.title_checkout_entry h1, .about_entry h1{*/
-    /*font-family: "Myriad Pro Light Semi Ext";*/
-    /*color:#848484;*/
-    /*font-size: 2em;*/
-    /*text-transform: none;*/
+/*font-family: "Myriad Pro Light Semi Ext";*/
+/*color:#848484;*/
+/*font-size: 2em;*/
+/*text-transform: none;*/
 /*}*/
 /*.choose .line1{*/
-    /*font-size: 3em;*/
-    /*text-transform: uppercase;*/
+/*font-size: 3em;*/
+/*text-transform: uppercase;*/
 /*}*/
 /*.choose .line2{*/
-    /*font-size: 1.2em;*/
+/*font-size: 1.2em;*/
 /*}*/
 .lastitem{
     text-align: center;
@@ -956,13 +956,13 @@ p.post-meta{
     margin: 0 auto;
 }
 /*.viplast:before{*/
-    /*border: 1px solid #aeaeae;*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*top: 10px;*/
-    /*bottom: 10px;*/
-    /*left: 10px;*/
-    /*right: 10px;*/
+/*border: 1px solid #aeaeae;*/
+/*content: "";*/
+/*position: absolute;*/
+/*top: 10px;*/
+/*bottom: 10px;*/
+/*left: 10px;*/
+/*right: 10px;*/
 /*}*/
 
 .choose_bottom_text {
@@ -1203,19 +1203,19 @@ div.checkoutcontainer div.input-country select, div.checkoutcontainer div.input-
     font-size: 10px;
     height: 38px;
 }
- .checkoutcontainer .payment-methods .input-box-type{
-     border:0px;
-     padding: 0;
-     margin: 0;
-     border: 1px solid #ccc;
-     border-radius: 3px;
-     overflow: hidden;
-     background: #fff url("../images/icon_dropdown.png") no-repeat 98% 50%;
-     margin-left: 0px;
-     width: 100%;
-     margin-top: 2px;
-     height: 38px;
- }
+.checkoutcontainer .payment-methods .input-box-type{
+    border:0px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fff url("../images/icon_dropdown.png") no-repeat 98% 50%;
+    margin-left: 0px;
+    width: 100%;
+    margin-top: 2px;
+    height: 38px;
+}
 
 .checkoutcontainer .payment-methods .input-box .sel_date{
     border:0px;
@@ -1228,10 +1228,10 @@ div.checkoutcontainer div.input-country select, div.checkoutcontainer div.input-
     width: 49%;
     height: 38px;
 }
- .type_p, .number_p, .exp_d{
-     width: 45%;
-     float: left;
- }
+.type_p, .number_p, .exp_d{
+    width: 45%;
+    float: left;
+}
 li.type_p {
     margin-right: 7%;
 }
@@ -1351,7 +1351,7 @@ table.onestepcheckout-totals tr.grand-total td.value{
     display: none;
 }
 /*.payment-methods dt{*/
-    /*float: none;*/
+/*float: none;*/
 /*}*/
 
 .payment-methods .form-list, .payment-methods dd, .input-box .v-fix{
@@ -1458,19 +1458,19 @@ form#login-form, form#form-validate {
 }
 
 /*.cms-page-view .std h1, .cms-no-route .std h1 {*/
-    /*font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;*/
-    /*color: #636363;*/
+/*font-family: "Myriad Pro Regular", Verdana, Arial, sans-serif;*/
+/*color: #636363;*/
 
 /*}*/
 
 /*.cms-page-view .std p.line2, .cms-no-route .std p.line2{*/
-    /*font-family: "Myriad Pro Light Semi Ext";*/
-    /*color:#848484;*/
-    /*background-color: #f8f8f8;*/
-    /*margin: 0px;*/
-    /*text-transform: none;*/
-    /*font-style: normal;*/
-    /*line-height: 1;*/
+/*font-family: "Myriad Pro Light Semi Ext";*/
+/*color:#848484;*/
+/*background-color: #f8f8f8;*/
+/*margin: 0px;*/
+/*text-transform: none;*/
+/*font-style: normal;*/
+/*line-height: 1;*/
 /*}*/
 .std>p{
     margin: 0px;
@@ -1481,8 +1481,6 @@ a.read-more {
     text-decoration: underline;
     font-family: "Myriad Pro Regular";
     font-size: 1em;
-    display:block;
-    margin-top:10px;
 }
 
 span.by-date {
@@ -1538,7 +1536,7 @@ li.level0.nav-1.first.signin:before, li.level0.nav-1.first.logout:before {
     margin: 0;
     padding: 6px 15px;
     font-family: "Myriad Pro Regular"
-    font-size:1em;
+font-size:1em;
     color:#b5afbe;
     border:1px solid #dddddd; border-right:0px;
     max-width: 85%;
@@ -1679,9 +1677,9 @@ div.onestepcheckout-shipping-method, p.onestepcheckout-numbers-3 {
     font-weight: normal;
 }
 /*.cms-reviews .std img{*/
-    /*border: 2px solid gray;*/
-    /*margin: 10px;*/
-    /*border-radius: 10px;*/
+/*border: 2px solid gray;*/
+/*margin: 10px;*/
+/*border-radius: 10px;*/
 /*}*/
 .block-title h2, .block-title h3, .block-title strong{
     font-family: "Myriad Pro Semi Ext";
@@ -1707,7 +1705,7 @@ div.onestepcheckout-shipping-method, p.onestepcheckout-numbers-3 {
 }
 
 .is-blog .col-main {
-    /*margin-top: 50px;*/
+    margin-top: 50px;
 }
 .home1_img img {
     width: 400px;
@@ -1730,7 +1728,7 @@ div.onestepcheckout-shipping-method, p.onestepcheckout-numbers-3 {
 
 .customer-account-create .buttons-set button.button, .customer-account-forgotpassword .buttons-set button.button{
     float: right;
- }
+}
 
 .form-list .control label{
     background: none;

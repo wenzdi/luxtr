@@ -1103,7 +1103,7 @@ p.warranty_text{
 
 div.onestepcheckout-threecolumns div.onestepcheckout-column-middle,
 div.onestepcheckout-threecolumns div.onestepcheckout-column-left{
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
     clear: both;
     background: none;
@@ -1112,7 +1112,8 @@ div.onestepcheckout-threecolumns div.onestepcheckout-column-left{
     padding-left: 60px;
 }
 div.onestepcheckout-threecolumns div.onestepcheckout-column-right{
-    width: 960px;
+    width: 90%;
+
     margin: 0 auto;
     clear: both;
     background: none;
@@ -1121,7 +1122,7 @@ div.onestepcheckout-threecolumns div.onestepcheckout-column-right{
 }
 
 .checkout_border{
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
     border: 1px solid #d3d3d3;
     border-radius: 5px;
@@ -1308,13 +1309,13 @@ input[type=email], input[type=search], input[type=number], input[type=password],
 
 .delimetr {
     height: 28px;
-    width: 840px;
+    width: 80%;
     border-bottom: 1px solid #dfdfdf;
     margin-left: 60px;
 }
 .delimetr2 {
     height: 28px;
-    width: 840px;
+    width: 80%;
     border-bottom: 1px solid #dfdfdf;
 }
 .onestepcheckout-summary th{
@@ -1416,7 +1417,7 @@ table.onestepcheckout-totals tr.grand-total td.value{
     text-align: center;
 }
 table.onestepcheckout-summary td.qty, table.onestepcheckout-summary th.qty {
-    width: 12%;
+    width: 18%;
     text-align: center;
 }
 
@@ -1503,6 +1504,8 @@ a.read-more {
     text-decoration: underline;
     font-family: "Myriad Pro Regular";
     font-size: 1em;
+    display:block;
+    margin-top:10px;
 }
 
 span.by-date {
@@ -1724,7 +1727,7 @@ div.onestepcheckout-shipping-method, p.onestepcheckout-numbers-3 {
 }
 
 .is-blog .col-main {
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 .home1_img img {
     width: 90%;
